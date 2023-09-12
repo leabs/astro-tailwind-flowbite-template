@@ -6,24 +6,7 @@ interface Props {
 
 const { title, subtitle } = Astro.props;
 
-const pages = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-  },
-];
+import data from "../data/site.json";
 ---
 
 <div class="bg-white">
@@ -65,17 +48,23 @@ const pages = [
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <!--map all pages -->
-        {
-          pages.map((page) => (
-            <a
-              href={page.href}
-              class="text-sm font-semibold leading-6 text-gray-900"
-            >
-              {page.title}
-            </a>
-          ))
-        }
+       
+          <!--map all pages -->
+          {
+            data.pages.map((page) => {
+              return (
+               
+                  <a
+                    href={page.href}
+                    class="text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    {page.title}
+                  </a>
+              
+              );
+            })
+          }
+       
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
     </nav>
@@ -119,17 +108,23 @@ const pages = [
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <!--map all pages -->
-              {
-                pages.map((page) => (
-                  <a
-                    href={page.href}
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {page.title}
-                  </a>
-                ))
-              }
+              
+                <!--map all pages -->
+                {
+                  data.pages.map((page) => {
+                    return (
+                     
+                        <a
+                          href={page.href}
+                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        >
+                          {page.title}
+                        </a>
+                    
+                    );
+                  })
+                }
+              
             </div>
             <div class="py-6"></div>
           </div>
@@ -150,9 +145,7 @@ const pages = [
       </div>
     </div>
     <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-        
-      </div>
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center"></div>
       <div class="text-center">
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           {title}
@@ -164,7 +157,9 @@ const pages = [
             class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >See My Work</a
           >
-          <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900"
+          <a
+            href="/contact"
+            class="text-sm font-semibold leading-6 text-gray-900"
             >Contact Me <span aria-hidden="true">→</span></a
           >
         </div>
@@ -191,10 +186,10 @@ document.querySelector("[role='dialog']").classList.add("hidden");
 document.getElementById("toggleMenu").addEventListener("click", function () {
     document.querySelector("body").classList.remove("overflow-hidden");
     document.querySelector("[role='dialog']").classList.add("hidden");
-});
+  });
 
-//Open sidebar when user clicks the #openMenu button
-document.getElementById("openMenu").addEventListener("click", function () {
+  //Open sidebar when user clicks the #openMenu button
+  document.getElementById("openMenu").addEventListener("click", function () {
     document.querySelector("body").classList.add("overflow-hidden");
     document.querySelector("[role='dialog']").classList.remove("hidden");
   });

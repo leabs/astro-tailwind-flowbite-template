@@ -1,0 +1,22 @@
+{
+  "owner": "Site Owner",
+  "siteName": "Site Name",
+  "pages": [
+    {
+      "title": "Home",
+      "href": "/"
+    },
+    {
+      "title": "About",
+      "href": "/about"
+    },
+    {
+      "title": "Projects",
+      "href": "/projects"
+    },
+    {
+      "title": "Contact",
+      "href": "/contact"
+    }
+  ]
+}

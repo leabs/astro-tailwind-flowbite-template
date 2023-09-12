@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro';
 
 import Header from '../components/Header.astro';
 import Body1 from '../components/Body1.astro';
+import data from "../data/site.json";
 
-const title = 'Astro';
+const title = data.siteName;
 const subtitle = 'A fresh approach to building websites';
 ---
 
-<Layout title="Page title here">
+<Layout title={data.siteName}>
 	<main>
 		<Header title={title} subtitle={subtitle}/>
 		<Body1/>

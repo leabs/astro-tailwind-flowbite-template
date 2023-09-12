@@ -6,24 +6,7 @@ interface Props {
 
 const { title, subtitle } = Astro.props;
 
-const pages = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-  },
-];
+import data from "../data/site.json";
 ---
 
 <div class="bg-white">
@@ -65,17 +48,21 @@ const pages = [
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <!--map all pages -->
-        {
-          pages.map((page) => (
-            <a
-              href={page.href}
-              class="text-sm font-semibold leading-6 text-gray-900"
-            >
-              {page.title}
-            </a>
-          ))
-        }
+       <!--map all pages -->
+       {
+        data.pages.map((page) => {
+          return (
+           
+              <a
+                href={page.href}
+                class="text-sm font-semibold leading-6 text-gray-900"
+              >
+                {page.title}
+              </a>
+          
+          );
+        })
+      }
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
     </nav>
@@ -121,14 +108,18 @@ const pages = [
             <div class="space-y-2 py-6">
               <!--map all pages -->
               {
-                pages.map((page) => (
-                  <a
-                    href={page.href}
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {page.title}
-                  </a>
-                ))
+                data.pages.map((page) => {
+                  return (
+                   
+                      <a
+                        href={page.href}
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        {page.title}
+                      </a>
+                  
+                  );
+                })
               }
             </div>
             <div class="py-6"></div>
