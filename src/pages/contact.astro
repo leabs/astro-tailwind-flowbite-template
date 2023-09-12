@@ -1,116 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import Header from '../components/Header.astro';
+import HeaderSmall from "../components/HeaderSmall.astro";
 
-
-const title = 'Contact';
-const subtitle = 'Contact me';
+const title = "Contact";
+const subtitle = "Contact me";
 ---
 
 <Layout title="Contact">
-	<main>
-		<Header title={title} subtitle={subtitle}/>
-		
-        <div class="bg-gradient-to-b from-purple-600 to-indigo-700 h-96 w-full">
-            <div class="md:px-20 px-4 py-8">
-                <div class="flex items-center justify-between">
-                    <div> 
-                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/contact1-svg1.svg" alt="logo"/>
-                    </div>
-                    <div class="hidden lg:flex items-center">
-                        <p tabindex="0" role="button" class="text-base focus:outline-none focus:ring-1 p-2 focus:ring-offset-1 focus:ring-white hover:text-gray-300 font-medium mr-10 leading-4 cursor-pointer text-white">Home</p>
-                        <p tabindex="0" role="button" class="text-base focus:outline-none focus:ring-1 p-2 focus:ring-offset-1 focus:ring-white hover:text-gray-300 font-medium mr-10 leading-4 text-white">About</p>
-                        <p tabindex="0" role="button" class="text-base focus:outline-none focus:ring-1 p-2 focus:ring-offset-1 focus:ring-white hover:text-gray-300 font-medium mr-10 leading-4 text-white">Pages</p>
-                        <p tabindex="0" role="button" class="text-base focus:outline-none focus:ring-1 p-2 focus:ring-offset-1 focus:ring-white hover:text-gray-300 font-medium mr-10 leading-4 text-white">Doc</p>
-                        <p tabindex="0" role="button" class="text-base focus:outline-none focus:ring-1 p-2 focus:ring-offset-1 focus:ring-white hover:text-gray-300 font-medium mr-10 leading-4 text-white">Contact</p>
-                        <button class="text-base font-medium leading-none text-indigo-700 py-4 px-5 bg-white rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:bg-gray-300">Get it now</button>
-                    </div>
-                    <div class="lg:hidden text-white">
-                        <img id="open" onclick="MenuHandler(true)" src="../svg/svg2.svg" alt="open"/>
-                        
-                        <div id="close" class="hidden close-m-menu" onclick="MenuHandler(false)">
-                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/contact1-svg3.svg" alt="close"/>
-                           
-                        </div>
-                    </div>
-                </div>
-                <nav class="lg:hidden relative z-40">
-                    <div class="w-full">
-                        <div class="visible flex items-center">
-                            <ul id="list" class="hidden p-2 bg-white absolute rounded top-0 left-0 right-0 shadow mt-6">
-                                <li class="flex cursor-pointer text-gray-600 dark:text-gray-200 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                    <a href="javascript:void(0)">
-                                        <span class="ml-2 font-bold">Home</span>
-                                    </a>
-                                </li>
-                                <li class="flex flex-col cursor-pointer text-gray-600 dark:text-gray-200 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
-                                    <a href="javascript:void(0)">
-                                        <span class="ml-2 font-bold">About</span>
-                                    </a>
-                                </li>
-                                <li class="flex cursor-pointer text-gray-600 dark:text-gray-200 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
-                                    <a href="javascript:void(0)">
-                                        <span class="ml-2 font-bold">Page</span>
-                                    </a>
-                                </li>
-                                <li class="flex flex-col cursor-pointer text-gray-600 dark:text-gray-200 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
-                                    <a href="javascript:void(0)">
-                                        <span class="ml-2 font-bold">Doc</span>
-                                    </a>
-                                </li>
-                                <li class="flex flex-col cursor-pointer text-gray-600 dark:text-gray-200 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" onclick="dropdownHandler(this)">
-                                    <a href="javascript:void(0)">
-                                        <span class="ml-2 font-bold">Contact</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div class="w-full flex items-center justify-center my-12">
-                <div class="absolute top-40 bg-white dark:bg-gray-800 shadow rounded py-16 lg:px-28 px-8">
-                    <p class="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700 dark:text-white">Let’s chat and get a quote!</p>
-                    <div class="md:flex items-center mt-12">
-                        <div class="md:w-72 flex flex-col">
-                            <label class="text-base font-semibold leading-none text-gray-800 dark:text-white">Name</label>
-                            <input tabindex="0" arial-label="Please input name" type="name" class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100" placeholder="Please input  name" />
-                        </div>
-                        <div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-                            <label class="text-base font-semibold leading-none text-gray-800 dark:text-white">Email Address</label>
-                            <input tabindex="0" arial-label="Please input email address" type="name" class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100" placeholder="Please input email address" />
-                        </div>
-                    </div>
-                    <div class="md:flex items-center mt-8">
-                        <div class="md:w-72 flex flex-col">
-                            <label class="text-base font-semibold leading-none text-gray-800 dark:text-white">Company name</label>
-                            <input tabindex="0" role="input" arial-label="Please input company name" type="name" class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100" placeholder="Please input company name" />
-                        </div>
-                        <div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-                            <label class="text-base font-semibold leading-none text-gray-800 dark:text-white">Country</label>
-                            <input tabindex="0" arial-label="Please input country name" type="name" class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100" placeholder="Please input country name" />
-                        </div>
-                    </div>
-                    <div>
-                        <div class="w-full flex flex-col mt-8">
-                            <label class="text-base font-semibold leading-none text-gray-800 dark:text-white">Message</label>
-                            <textarea tabindex="0" aria-label="leave a message" role="textbox" type="name" class="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"></textarea>
-                        </div>
-                    </div>
-                    <p class="text-xs leading-3 text-gray-600 dark:text-gray-200 mt-4">By clicking submit you agree to our terms of service, privacy policy and how we use data as stated</p>
-                    <div class="flex items-center justify-center w-full">
-                        <button class="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-indigo-700 rounded hover:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none">SUBMIT</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-    
-	</main>
+  <main>
+    <HeaderSmall title={title} subtitle={subtitle} />
+  </main>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>
