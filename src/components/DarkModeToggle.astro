@@ -1,0 +1,56 @@
+<!--Dark mode slider -->
+<button
+  onclick="toggleDarkMode()"
+  id="btn-toggle"
+  class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+>
+Icon  </button
+>
+<script is:inline>
+// check if dark mode is enabled
+if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+    // if it's enabled, turn on dark mode
+    const body = document.querySelector("body");
+    if (body instanceof HTMLElement) {
+        body.classList.add("dark");
+    }
+} else {
+    // if it's not enabled, turn off dark mode
+    const setDarkMode = function () {
+        const body = document.querySelector("body");
+        if (!body) return;
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark" || (!storedTheme && prefersDark.matches)) {
+            body.classList.add("dark");
+        } else {
+            body.classList.remove("dark");
+        }
+        prefersDark.addEventListener("change", function (e) {
+            if (e.matches) {
+                body.classList.add("dark");
+            } else {
+                body.classList.remove("dark");
+            }
+        });
+    };
+    document.addEventListener("DOMContentLoaded", setDarkMode);
+    setDarkMode();
+}
+
+// toggle dark mode
+const toggleDarkMode = function () {
+
+    const body = document.querySelector("body");
+    if (!body) return;
+    body.classList.toggle("dark");
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+    );
+  };
+</script>

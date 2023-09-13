@@ -1,6 +1,7 @@
 {
   "owner": "Site Owner",
   "siteName": "Site Name",
+  "siteDescription": "Site Description",
   "pages": [
     {
       "title": "Home",
@@ -17,6 +18,24 @@
     {
       "title": "Contact",
       "href": "/contact"
+    }
+  ],
+  "social": [
+    {
+      "title": "Twitter",
+      "href": "https://twitter.com/"
+    },
+    {
+      "title": "Facebook",
+      "href": "https://facebook.com/"
+    },
+    {
+      "title": "Instagram",
+      "href": "https://instagram.com/"
+    },
+    {
+      "title": "LinkedIn",
+      "href": "https://linkedin.com/"
     }
   ]
 }

@@ -7,9 +7,10 @@ interface Props {
 const { title, subtitle } = Astro.props;
 
 import data from "../data/site.json";
+import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
-<div class="bg-white">
+<div class="bg-white dark:bg-slate-800">
   <header class="absolute inset-x-0 top-0 z-50">
     <nav
       class="flex items-center justify-between p-6 lg:px-8"
@@ -47,33 +48,31 @@ import data from "../data/site.json";
           </svg>
         </button>
       </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-       
-          <!--map all pages -->
-          {
-            data.pages.map((page) => {
-              return (
-               
-                  <a
-                    href={page.href}
-                    class="text-sm font-semibold leading-6 text-gray-900"
-                  >
-                    {page.title}
-                  </a>
-              
-              );
-            })
-          }
-       
+      <div class="hidden lg:flex lg:gap-x-12 navbar">
+        <!--map all pages -->
+        {
+          data.pages.map((page) => {
+            return (
+              <a
+                href={page.href}
+                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+              >
+                {page.title}
+              </a>
+            );
+          })
+        }
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <DarkModeToggle />
+      </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div class="lg:hidden" role="dialog" aria-modal="true">
       <!-- Background backdrop, show/hide based on slide-over state. -->
       <div class="fixed inset-0 z-50"></div>
       <div
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-slate-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
         <div class="flex items-center justify-between">
           <a href="/" class="-m-1.5 p-1.5">
@@ -107,24 +106,20 @@ import data from "../data/site.json";
         </div>
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              
-                <!--map all pages -->
-                {
-                  data.pages.map((page) => {
-                    return (
-                     
-                        <a
-                          href={page.href}
-                          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {page.title}
-                        </a>
-                    
-                    );
-                  })
-                }
-              
+            <div class="space-y-2 py-6 navbar">
+              <!--map all pages -->
+              {
+                data.pages.map((page) => {
+                  return (
+                    <a
+                      href={page.href}
+                      class="-mx-3 dark:text-white block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:hover:bg-slate-900"
+                    >
+                      {page.title}
+                    </a>
+                  );
+                })
+              }
             </div>
             <div class="py-6"></div>
           </div>
@@ -147,10 +142,12 @@ import data from "../data/site.json";
     <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
       <div class="hidden sm:mb-8 sm:flex sm:justify-center"></div>
       <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <h1
+          class="dark:text-white text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+        >
           {title}
         </h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">{subtitle}</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{subtitle}</p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="/projects"
@@ -159,7 +156,7 @@ import data from "../data/site.json";
           >
           <a
             href="/contact"
-            class="text-sm font-semibold leading-6 text-gray-900"
+            class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >Contact Me <span aria-hidden="true">→</span></a
           >
         </div>
@@ -184,13 +181,13 @@ document.querySelector("[role='dialog']").classList.add("hidden");
 
 //Close sidebar when user clicks the X #toggleMenu button
 document.getElementById("toggleMenu").addEventListener("click", function () {
-    document.querySelector("body").classList.remove("overflow-hidden");
-    document.querySelector("[role='dialog']").classList.add("hidden");
-  });
+  document.querySelector("body").classList.remove("overflow-hidden");
+  document.querySelector("[role='dialog']").classList.add("hidden");
+});
 
-  //Open sidebar when user clicks the #openMenu button
-  document.getElementById("openMenu").addEventListener("click", function () {
-    document.querySelector("body").classList.add("overflow-hidden");
-    document.querySelector("[role='dialog']").classList.remove("hidden");
-  });
+//Open sidebar when user clicks the #openMenu button
+document.getElementById("openMenu").addEventListener("click", function () {
+  document.querySelector("body").classList.add("overflow-hidden");
+  document.querySelector("[role='dialog']").classList.remove("hidden");
+});
 </script>
