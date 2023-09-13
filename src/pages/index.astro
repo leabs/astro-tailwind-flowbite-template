@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 
 import Header from '../components/Header.astro';
 import Body1 from '../components/Body1.astro';
-import Body2 from '../components/Body2.astro';
 import data from "../data/site.json";
 
 const title = data.siteName;
@@ -14,7 +13,7 @@ const subtitle = 'A fresh approach to building websites';
 	<main>
 		<Header title={title} subtitle={subtitle}/>
 		<Body1/>
-		<Body2 />
+		
 	</main>
 </Layout>
 
