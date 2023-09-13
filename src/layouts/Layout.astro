@@ -8,10 +8,10 @@ const { title } = Astro.props;
 import Footer from "../components/Footer.astro";
 
 import data from "../data/site.json";
-import { ViewTransitions } from "astro:transitions";
+
 ---
 
-<!doctype html  transition:animate="none">
+<!doctype html  >
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,8 +21,8 @@ import { ViewTransitions } from "astro:transitions";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <slot transition:animate="slide" />
+  <body >
+    <slot />
     <Footer />
   </body>
 </html>

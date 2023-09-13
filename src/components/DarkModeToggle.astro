@@ -4,7 +4,7 @@
   id="btn-toggle"
   class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 >
-Icon  </button
+ </button
 >
 <script is:inline>
 // check if dark mode is enabled
@@ -17,11 +17,14 @@ if (
     const body = document.querySelector("body");
     if (body instanceof HTMLElement) {
         body.classList.add("dark");
+        //set button text to dark
+        document.getElementById("btn-toggle").innerHTML = "Light";
     }
 } else {
     // if it's not enabled, turn off dark mode
     const setDarkMode = function () {
         const body = document.querySelector("body");
+        document.getElementById("btn-toggle").innerHTML = "Dark";
         if (!body) return;
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
         const storedTheme = localStorage.getItem("theme");
@@ -52,5 +55,11 @@ const toggleDarkMode = function () {
         "theme",
         body.classList.contains("dark") ? "dark" : "light"
     );
+    //Set button text to light or dark
+    if (body.classList.contains("dark")) {
+        document.getElementById("btn-toggle").innerHTML = "Light";
+    } else {
+        document.getElementById("btn-toggle").innerHTML = "Dark";
+    }
   };
 </script>

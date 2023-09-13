@@ -121,7 +121,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
                 })
               }
             </div>
-            <div class="py-6"></div>
+            <div class="py-6"><DarkModeToggle /></div>
           </div>
         </div>
       </div>
@@ -147,7 +147,9 @@ import DarkModeToggle from "./DarkModeToggle.astro";
         >
           {title}
         </h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{subtitle}</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
+          {subtitle}
+        </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="/projects"
@@ -189,5 +191,5 @@ document.getElementById("toggleMenu").addEventListener("click", function () {
 document.getElementById("openMenu").addEventListener("click", function () {
   document.querySelector("body").classList.add("overflow-hidden");
   document.querySelector("[role='dialog']").classList.remove("hidden");
-});
+  });
 </script>
