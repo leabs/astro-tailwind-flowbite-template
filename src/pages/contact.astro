@@ -2,14 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
+import ContactForm from "../components/Contact.astro";
 
 const title = "Contact";
 const subtitle = "Contact me";
 ---
 
 <Layout title="Contact">
-  <main>
+  <div>
     <HeaderSmall title={title} subtitle={subtitle} />
+  </div>
+  <main>
+    <ContactForm />
   </main>
 </Layout>
 

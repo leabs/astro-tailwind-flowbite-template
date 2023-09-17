@@ -6,14 +6,11 @@ import Body1 from '../components/Body1.astro';
 import data from "../data/site.json";
 
 const title = data.siteName;
-const subtitle = 'A fresh approach to building websites';
 ---
 
 <Layout title={data.siteName}>
 	<main>
-		<Header title={title} subtitle={subtitle}/>
-		<Body1/>
-		
+		<Header title={title} subtitle={data.about}/>
 	</main>
 </Layout>
 

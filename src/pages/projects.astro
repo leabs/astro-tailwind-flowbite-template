@@ -1,20 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import HeaderSmall from '../components/HeaderSmall.astro';
-import Body1 from '../components/Body1.astro';
+import HeaderSmall from "../components/HeaderSmall.astro";
+import Card from "../components/Card.astro";
 
-const title = 'Projects';
-const subtitle = 'Some Projects';
+import data from "../data/site.json";
+const title = "Projects";
+const subtitle = "Some Projects";
 ---
 
 <Layout title="Projects">
-	<main>
-		<HeaderSmall title={title} subtitle={subtitle}/>
-		<Body1/>
-	</main>
+  <main>
+    <HeaderSmall title={title} subtitle={subtitle} />
+    <div class="container">
+      <ul class="">
+        {
+          data.projects.map((project) => (
+            <Card
+              title={project.title}
+              href={project.href}
+              body={project.about}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </main>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>

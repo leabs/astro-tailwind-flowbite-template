@@ -1,7 +1,13 @@
 {
-  "owner": "Site Owner",
-  "siteName": "Site Name",
-  "siteDescription": "Site Description",
+  "owner": "John Smith",
+  "siteName": "John Smith's Portfolio",
+  "siteDescription": "John Smith's Portfolio for potential employers",
+  "about": "I'm a web developer from Anytown, USA. I like to build things with HTML, CSS, and JavaScript.",
+  "contact": {
+    "email": "bob@aol.com",
+    "phone": "555-555-5555",
+    "address": "1234 Main St. Anytown, USA 12345"
+  },
   "pages": [
     {
       "title": "Home",
@@ -36,6 +42,28 @@
     {
       "title": "LinkedIn",
       "href": "https://linkedin.com/"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project 1",
+      "href": "/project1",
+      "about": "Project 1 description"
+    },
+    {
+      "title": "Project 2",
+      "href": "/project2",
+      "about": "Project 2 description"
+    },
+    {
+      "title": "Project 3",
+      "href": "/project3",
+      "about": "Project 3 description"
+    },
+    {
+      "title": "Project 4",
+      "href": "/project4",
+      "about": "Project 4 description"
     }
   ]
 }
