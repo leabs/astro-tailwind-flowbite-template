@@ -4,14 +4,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
+import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 import data from "../data/site.json";
-
 ---
 
-<!doctype html  >
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,9 +20,12 @@ import data from "../data/site.json";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body >
-    <slot />
-    <Footer />
+  <body>
+    <div class="bg-stone-100 dark:bg-slate-900 min-h-screen">
+      <Nav />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
 
@@ -37,39 +39,7 @@ import data from "../data/site.json";
     position: fixed;
   }
 
-  .dark {
-    background: #333333;
-  }
 
-  input[type="checkbox"] {
-    visibility: hidden;
-  }
-
-  .box {
-    width: 40px;
-    height: 10px;
-    background: gray;
-    position: relative;
-    border-radius: 3px;
-  }
-
-  label {
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    transition: all 0.6s ease;
-    cursor: pointer;
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    background: #333333;
-  }
-
-  input[type="checkbox"]:checked + label {
-    left: 27px;
-    background: #f7f7f7;
-  }
 
   @media (max-width: 767px) {
     main {

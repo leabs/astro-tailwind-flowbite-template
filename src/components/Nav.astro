@@ -3,55 +3,97 @@ import data from "../data/site.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
-<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-  <div class="flex lg:flex-1">
-    <a href="/" class="-m-1.5 p-1.5">
-      <span class="sr-only">Your Company</span>
-      <img
-        class="h-8 w-auto"
-        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-        alt=""
-      />
-    </a>
-  </div>
-  <div class="flex lg:hidden">
-    <button
-      id="openMenu"
-      type="button"
-      class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+<nav class="navbar w-full">
+  <div class="container flex-no-wrap relative flex">
+    <div
+      class="relative flex flex-wrap items-center justify-between w-full group py-7 shrink-0"
     >
-      <span class="sr-only">Open main menu</span>
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="hidden lg:flex lg:gap-x-12 navbar">
-    <!--map all pages -->
-    {
-      data.pages.map((page) => {
-        return (
-          <a
-            href={page.href}
-            class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+      <div>
+        <a href="/">
+          <span
+            class="text-lg font-bold text-dark-grey-700 dark:text-white hover:text-dark-grey-900"
+            >{data.siteName}</span
           >
-            {page.title}
-          </a>
-        );
-      })
-    }
-  </div>
-  <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <DarkModeToggle />
+        </a>
+      </div>
+      <div
+        class="items-center justify-between hidden gap-12 text-black dark:text-white md:flex"
+      >
+        {
+          data.pages.map((page) => {
+            return (
+              <a
+                href={page.href}
+                class="font-normal text-dark-grey-700 hover:text-dark-grey-900"
+              >
+                {page.title}
+              </a>
+            );
+          })
+        }
+      </div>
+      
+      <div class="items-center gap-8 md:flex">
+        <DarkModeToggle />
+      </div>
+      <button
+        onclick="
+        (() => { this.closest('.group').classList.toggle('open') })()
+        "
+        class="flex md:hidden"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="dark:text-white"
+        >
+          <path class="hamburg"
+            d="M3 8H21C21.2652 8 21.5196 7.89464 21.7071 7.70711C21.8946 7.51957 22 7.26522 22 7C22 6.73478 21.8946 6.48043 21.7071 6.29289C21.5196 6.10536 21.2652 6 21 6H3C2.73478 6 2.48043 6.10536 2.29289 6.29289C2.10536 6.48043 2 6.73478 2 7C2 7.26522 2.10536 7.51957 2.29289 7.70711C2.48043 7.89464 2.73478 8 3 8ZM21 16H3C2.73478 16 2.48043 16.1054 2.29289 16.2929C2.10536 16.4804 2 16.7348 2 17C2 17.2652 2.10536 17.5196 2.29289 17.7071C2.48043 17.8946 2.73478 18 3 18H21C21.2652 18 21.5196 17.8946 21.7071 17.7071C21.8946 17.5196 22 17.2652 22 17C22 16.7348 21.8946 16.4804 21.7071 16.2929C21.5196 16.1054 21.2652 16 21 16ZM21 11H3C2.73478 11 2.48043 11.1054 2.29289 11.2929C2.10536 11.4804 2 11.7348 2 12C2 12.2652 2.10536 12.5196 2.29289 12.7071C2.48043 12.8946 2.73478 13 3 13H21C21.2652 13 21.5196 12.8946 21.7071 12.7071C21.8946 12.5196 22 12.2652 22 12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11Z"
+            ></path>
+        </svg>
+      </button>
+      <div
+        class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-4 px-4 rounded-2xl group-[.open]:max-h-64 top-full"
+      >
+        {
+          data.pages.map((page) => {
+            return (
+              <a
+                href={page.href}
+                class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900"
+              >
+                {page.title}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
   </div>
 </nav>
+
+<style>
+  .active {
+    text-decoration: underline;
+  }
+  .hamburg{
+    fill:black;
+  }
+  body.dark .hamburg{
+    fill:white;
+  }
+</style>
+
+<script>
+  const navbar = document.querySelector(".navbar");
+  const navLinks = navbar ? navbar.querySelectorAll("a") : [];
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if (link.href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+</script>
