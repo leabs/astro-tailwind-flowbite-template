@@ -3,10 +3,8 @@ import data from "../data/site.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
 
 // import the Image component and the image
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import myImage from "../../assets/favicon.svg";
-
-
 ---
 
 <nav class="bg-gray-800" id="navbar">
@@ -15,7 +13,7 @@ import myImage from "../../assets/favicon.svg";
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
         <button
-        id="menuToggle"
+          id="menuToggle"
           type="button"
           class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           aria-controls="mobile-menu"
@@ -65,8 +63,9 @@ import myImage from "../../assets/favicon.svg";
         class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
       >
         <div class="flex flex-shrink-0 items-center">
-          <Image src={myImage} alt="Site logo" width="34"
-          height="34" />
+          <a href="/">
+            <Image src={myImage} alt="Site logo" width="34" height="34" />
+          </a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -132,26 +131,26 @@ import myImage from "../../assets/favicon.svg";
 </style>
 
 <script>
-  function mobileMenu(){
-  //Start with #mobile-menu hidden
-  const mobileMenu = document.getElementById("mobile-menu");
-  mobileMenu.classList.add("hidden");
-  //Toggle #mobile-menu when clicking on #menuToggle
-  const menuToggle = document.getElementById("menuToggle");
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  //Hide #mobile-menu when clicking on a link
-  const navLinks = mobileMenu.querySelectorAll("a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+  function mobileMenu() {
+    //Start with #mobile-menu hidden
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.add("hidden");
+    //Toggle #mobile-menu when clicking on #menuToggle
+    const menuToggle = document.getElementById("menuToggle");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
-  });
-}
 
-document.addEventListener('astro:after-swap', mobileMenu)
+    //Hide #mobile-menu when clicking on a link
+    const navLinks = mobileMenu.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+
+  document.addEventListener("astro:after-swap", mobileMenu);
 </script>
 <script>
   const navbar = document.getElementById("#navbar");
