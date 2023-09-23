@@ -132,6 +132,7 @@ import myImage from "../../assets/favicon.svg";
 </style>
 
 <script>
+  function mobileMenu(){
   //Start with #mobile-menu hidden
   const mobileMenu = document.getElementById("mobile-menu");
   mobileMenu.classList.add("hidden");
@@ -148,6 +149,9 @@ import myImage from "../../assets/favicon.svg";
       mobileMenu.classList.add("hidden");
     });
   });
+}
+
+document.addEventListener('astro:after-swap', mobileMenu)
 </script>
 <script>
   const navbar = document.getElementById("#navbar");
