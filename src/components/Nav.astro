@@ -2,16 +2,14 @@
 import data from "../data/site.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
 
-// import the Image component and the image
 import { Image } from "astro:assets";
-import myImage from "../../assets/favicon.svg";
+import myImage from "../../assets/logo.png";
 ---
 
 <nav class="bg-slate-800" id="navbar">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
         <button
           id="menuToggle"
           type="button"
@@ -21,11 +19,6 @@ import myImage from "../../assets/favicon.svg";
         >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
           <svg
             class="block h-6 w-6"
             fill="none"
@@ -39,11 +32,6 @@ import myImage from "../../assets/favicon.svg";
               stroke-linejoin="round"
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
-          <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
           <svg
             class="hidden h-6 w-6"
             fill="none"
@@ -69,7 +57,6 @@ import myImage from "../../assets/favicon.svg";
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             {
               data.pages.map((page) => {
                 return (

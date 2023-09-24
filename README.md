@@ -1,54 +1,71 @@
-# Astro Starter Kit: Basics
+# Astro Tailwind Template
 
+This is a website template that uses Astro 3.0 along with Tailwind to create a static website for various smaller projects. I'm hoping to use this as a foundation for small projects in the future such as building friends or small businesses fast and simple static sites.
+
+This is a work in progress, so please feel free to send me a pull request for any improvements you make. Look at the contributing section below for more information.
+
+## Getting Started
+
+- Clone or fork this repo.
+- Run `npm install` to install all the dependencies.
+- Run `npm run dev` to start the dev server.
+- You can then view the site at [http://localhost:4321/](http://localhost:4321/).
+
+## Changing Site Contents
+
+Most of the site data lives in `src/data/site.json`. You can change the site title, description, social media links and more there. Make sure to use a JSON linter in case you make any mistakes!
+
+## Adding Pages
+
+Add pages in the `src/pages` directory. Create a new file named `pagename.astro` and import the Layout and some varibales like so:
+
+```html
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderSmall from "../components/HeaderSmall.astro";
+
+const title = "Contact";
+const subtitle = "Contact me";
+---
+
+<Layout title="Contact">
+  <div>
+    <HeaderSmall title="{title}" subtitle="{subtitle}" />
+  </div>
+  <main>
+    <div class="container">CONTENT HERE</div>
+  </main>
+</Layout>
 ```
-npm create astro@latest -- --template basics
-```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+**Also note:** you'll need to add the page to `src/data/site.json` in the `pages` array for the page to show up in the navigation. Or don't, it's your site. Maybe you don't want / need the new page in the nav.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Site Logo
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Replace the image in `assets/logo.png` with your own logo. If it's not square, you'll need to adjust the `width` and `height` in `components/Nav.astro` file line 55.
 
-## 🚀 Project Structure
+## Site Favicon
 
-Inside of your Astro project, you'll see the following folders and files:
+Replace the image in `public/favicon.svg` with your own favicon.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Project Images
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Project images should be added to `assets`. You can set their image name in `src/data/site.json` in the `projects` array. You can also set the project title, description, and link there as well.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Site Colors
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Site Fonts
 
-## 🧞 Commands
+## Contributing
 
-All commands are run from the root of the project, from a terminal:
+If you'd like to contribute to this project, please feel free to send me a pull request. I'm always looking for ways to improve this template. If its for a bug fix, please create an issue first so we can discuss it, same with a feature add. This will give me more understanding when reviewing the PR. I want to keep this project neat and fast so please make sure to follow the guidelines below.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Guidelines
 
-## 👀 Want to learn more?
+- Please use the [Prettier](https://prettier.io/) code formatter to keep the code clean and consistent.
+- Please use [Tailwind](https://tailwindcss.com/) classes for styling.
+- Please use [Astro](https://astro.build/) components for HTML.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

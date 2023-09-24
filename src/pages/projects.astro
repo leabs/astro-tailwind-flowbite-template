@@ -1,29 +1,53 @@
 ---
+const title = "Projects";
+const subtitle = "Some Projects";
+
 import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
-import Card from "../components/Card.astro";
-
+import ProjectCard from "../components/ProjectCards.astro";
 import data from "../data/site.json";
-const title = "Projects";
-const subtitle = "Some Projects";
+
+type Props = {
+  projectTitle: string;
+  href: string;
+  body: string;
+  type?: string;
+  repo?: string;
+  image?: string;
+};
 ---
 
 <Layout title="Projects">
   <main>
     <HeaderSmall title={title} subtitle={subtitle} />
     <div class="container">
-      <ul class="">
-        {
-          data.projects.map((project) => (
-            <Card
-              title={project.title}
-              href={project.href}
-              body={project.about}
-            />
-          ))
-        }
-      </ul>
+      <section class="">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+          <div class="grid md:grid-cols-2 gap-8">
+            {
+              data.projects.map(
+                (
+                  value: { projectTitle: string; href: string; about: string; repo?: string, image?: string, type?: string },
+                  index: number
+                ) => {
+                  console.log("project", value);
+                  return (
+                    <ProjectCard
+                      image={value.image}
+                      projectTitle={value.projectTitle}
+                      href={value.href}
+                      body={value.about}
+                      type={value.type}
+                      repo={value.repo}
+                    />
+                  );
+                }
+              )
+            }
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </Layout>

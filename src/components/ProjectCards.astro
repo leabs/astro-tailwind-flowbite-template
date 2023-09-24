@@ -1,0 +1,83 @@
+---
+interface Props {
+  projectTitle: string;
+  body: string;
+  href: string;
+  type?: string;
+  repo?: string;
+  image?: string;
+}
+
+const { href, projectTitle, body, type, repo, image } = Astro.props;
+---
+
+<div
+  class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg"
+>
+  {
+    image && (
+      <div class="">
+        <img src={image} alt={projectTitle} class="rounded-t-lg" />
+      </div>
+    )
+  }
+  <div class="px-8 py-4 md:px-12 md:py-8">
+  {
+    type && (
+      <span class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
+        {type}
+      </span>
+    )
+  }
+  <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
+    {projectTitle}
+  </h2>
+  <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+    {body}
+  </p>
+  <a
+    href={href}
+    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
+    >Demo
+    <svg
+      class="w-3.5 h-3.5 ml-2"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 14 10"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+    </svg>
+  </a>
+  {
+    repo && (
+      <a
+        href={repo}
+        class="ml-4 text-green-600 dark:text-green-700 hover:underline font-medium text-lg inline-flex items-center"
+      >
+        Repo
+        <svg
+          class="w-3.5 h-3.5 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="green"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </div>
+      </a>
+    )
+  }
+</div>

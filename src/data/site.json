@@ -14,10 +14,6 @@
       "href": "/"
     },
     {
-      "title": "About",
-      "href": "/about"
-    },
-    {
       "title": "Projects",
       "href": "/projects"
     },
@@ -46,24 +42,32 @@
   ],
   "projects": [
     {
-      "title": "Project 1",
-      "href": "/project1",
-      "about": "Project 1 description"
+      "projectTitle": "Project 1",
+      "href": "https://github.com",
+      "about": "Project 1 description",
+      "type": "Python, Django, HTML, CSS",
+      "image": "../assets/screen.png"
     },
     {
-      "title": "Project 2",
-      "href": "/project2",
-      "about": "Project 2 description"
+      "projectTitle": "Project 2",
+      "href": "https://github.com",
+      "about": "Video dashboard using JavaScript that allows user to build and share a layout of videos from YouTube.",
+      "repo": "https://github.com",
+      "type": "JavaScript, HTML, CSS",
+      "image": "../assets/screen2.png"
     },
     {
-      "title": "Project 3",
-      "href": "/project3",
-      "about": "Project 3 description"
+      "projectTitle": "Project 3",
+      "href": "https://github.com",
+      "about": "Project 3 description",
+      "type": "PHP, MySQL, HTML, CSS",
+      "repo": "https://github.com"
     },
     {
-      "title": "Project 4",
-      "href": "/project4",
-      "about": "Project 4 description"
+      "projectTitle": "Project 4",
+      "href": "https://github.com",
+      "about": "Project 4 description",
+      "type": "WordPress"
     }
   ]
 }
