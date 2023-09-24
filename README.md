@@ -54,6 +54,8 @@ Project images should be added to `assets`. You can set their image name in `src
 
 ## Site Colors
 
+Colors for primary, secondary, and accent are set in the `tailwind.config.cjs` file. You can change them there to whatever you'd like. A tailwind pallete or even a hex or rgb value will work.
+
 ## Site Fonts
 
 ## Contributing

@@ -1,11 +1,26 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    fill: ({ theme }) => ({
-      indigo: theme("colors.blue"),
-    }),
+    colors:{
+      primary: 'indianred',
+      secondary: '#ecc94b',
+      transparent: 'transparent',
+      current: 'currentColor',
+      slate: colors.slate,
+      stone: colors.stone,
+      blue: colors.blue,
+      green: colors.green,
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+    },
     extend: {
       translate: ["dark"],
     },

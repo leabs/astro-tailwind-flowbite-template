@@ -44,7 +44,7 @@
     {
       "projectTitle": "Project 1",
       "href": "https://github.com",
-      "about": "Project 1 description",
+      "about": "Database of books and reviews from users complete with auth and comments.",
       "type": "Python, Django, HTML, CSS",
       "image": "../assets/screen.png"
     },
@@ -59,9 +59,10 @@
     {
       "projectTitle": "Project 3",
       "href": "https://github.com",
-      "about": "Project 3 description",
+      "about": "Some info about this project here, please add something here for this project ok here.",
       "type": "PHP, MySQL, HTML, CSS",
-      "repo": "https://github.com"
+      "repo": "https://github.com",
+      "image": "../assets/screen2.png"
     },
     {
       "projectTitle": "Project 4",
