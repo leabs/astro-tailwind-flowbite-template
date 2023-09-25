@@ -14,7 +14,6 @@ type Props = {
   body: string;
   type?: string;
   repo?: string;
-  image?: string;
 };
 ---
 
@@ -28,13 +27,18 @@ type Props = {
             {
               data.projects.map(
                 (
-                  value: { projectTitle: string; href: string; about: string; repo?: string, image?: string, type?: string },
+                  value: {
+                    projectTitle: string;
+                    href: string;
+                    about: string;
+                    repo?: string;
+                    type?: string;
+                  },
                   index: number
                 ) => {
                   console.log("project", value);
                   return (
                     <ProjectCard
-                      image={value.image}
                       projectTitle={value.projectTitle}
                       href={value.href}
                       body={value.about}

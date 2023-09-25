@@ -5,22 +5,14 @@ interface Props {
   href: string;
   type?: string;
   repo?: string;
-  image?: string;
 }
 
-const { href, projectTitle, body, type, repo, image } = Astro.props;
+const { href, projectTitle, body, type, repo } = Astro.props;
 ---
 
 <div
   class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg"
 >
-  {
-    image && (
-      <div class="">
-        <img src={image} alt={projectTitle} class="rounded-t-lg" />
-      </div>
-    )
-  }
   <div class="px-8 py-4 md:px-12 md:py-8">
   {
     type && (
