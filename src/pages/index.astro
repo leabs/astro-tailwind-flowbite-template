@@ -1,15 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-import Header from '../components/Header.astro';
-import data from "../data/site.json";
 const title = data.siteName;
+
+import Layout from "../layouts/Layout.astro";
+
+import Header from "../components/Header.astro";
+import data from "../data/site.json";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title={data.siteName}>
-	<main>
-		<Header title={title} subtitle={data.about}/>
-	</main>
+  <main>
+    <Header title={title} subtitle={data.about} />
+    <div class="container">
+      <Timeline />
+    </div>
+  </main>
 </Layout>
-
-

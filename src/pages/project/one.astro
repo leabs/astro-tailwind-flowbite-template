@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro"
+
+import HeaderSmall from "../../components/HeaderSmall.astro";
+
+import Gallery from "../../components/Gallery.astro";
+const title = "Project 1";
+const subtitle = "Project 1 info";
+---
+
+<Layout title="Project 1">
+  <div>
+    <HeaderSmall title={title} subtitle={subtitle} />
+  </div>
+  <main>
+    <div class="container">
+      <Gallery />
+    </div>
+  </main>
+</Layout>
+
+<style></style>

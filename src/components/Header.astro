@@ -2,6 +2,7 @@
 import data from "../data/site.json";
 
 import Button from "../components/Button.astro";
+import ButtonAlt from "../components/ButtonAlt.astro";
 ---
 
 <div class="mt-16">
@@ -16,11 +17,7 @@ import Button from "../components/Button.astro";
     </p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
       <Button text="My Projects" href="/projects" />
-      <a
-        href="/contact"
-        class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-        >Contact Me <span aria-hidden="true">→</span></a
-      >
+      <ButtonAlt text="Contact Me" href="/contact" />
     </div>
   </div>
 </div>

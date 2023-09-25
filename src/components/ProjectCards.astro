@@ -7,15 +7,16 @@ interface Props {
   href: string;
   type?: string;
   repo?: string;
+  external?: boolean;
 }
 
-const { href, projectTitle, body, type, repo } = Astro.props;
+const { href, projectTitle, body, type, repo, external } = Astro.props;
 ---
 
 <div
   class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg"
 >
-  <div class="px-8 py-4 md:px-12 md:py-8">
+  <div class="px-8 py-8">
   {
     type && (
       <span class="bg-primary text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-100 mb-2">
@@ -29,5 +30,5 @@ const { href, projectTitle, body, type, repo } = Astro.props;
   <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
     {body}
   </p>
-  <ButtonGroup text1="3" href1="https://google.com" text2="Hey" href2="https://github.com" />
+  <ButtonGroup text1="More Info" href1={href} text2="Code Repo" href2={repo} external="true" />
 </div>

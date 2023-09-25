@@ -20,6 +20,10 @@
     {
       "title": "Contact",
       "href": "/contact"
+    },
+    {
+      "title": "Components",
+      "href": "/components"
     }
   ],
   "social": [
@@ -43,14 +47,15 @@
   "projects": [
     {
       "projectTitle": "Project 1",
-      "href": "https://github.com",
-      "about": "Database of books and reviews from users complete with auth and comments.",
+      "href": "project/one",
+      "about": "Database of books and reviews from users complete with auth and comments and so much more!!!",
       "type": "Python, Django, HTML, CSS",
-      "image": "../assets/screen.png"
+      "image": "../assets/screen.png",
+      "repo": "https://github.com"
     },
     {
       "projectTitle": "Project 2",
-      "href": "https://github.com",
+      "href": "project/two",
       "about": "Video dashboard using JavaScript that allows user to build and share a layout of videos from YouTube.",
       "repo": "https://github.com",
       "type": "JavaScript, HTML, CSS",
@@ -58,7 +63,7 @@
     },
     {
       "projectTitle": "Project 3",
-      "href": "https://github.com",
+      "href": "project/three",
       "about": "Some info about this project here, please add something here for this project ok here.",
       "type": "PHP, MySQL, HTML, CSS",
       "repo": "https://github.com",
@@ -66,21 +71,10 @@
     },
     {
       "projectTitle": "Project 4",
-      "href": "https://github.com",
-      "about": "Project 4 description",
-      "type": "WordPress"
-    },
-    {
-      "projectTitle": "Project 5",
-      "href": "https://github.com",
-      "about": "Project 5 description",
-      "type": "WordPress"
-    },
-    {
-      "projectTitle": "Project 6",
-      "href": "https://github.com",
-      "about": "Project 6 description",
-      "type": "WordPress"
+      "href": "project/four",
+      "about": "Some info about project 4 I'm not sure haha ok see ya",
+      "type": "WordPress",
+      "repo": "https://github.com"
     }
   ]
 }

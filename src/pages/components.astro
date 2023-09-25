@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import HeaderSmall from "../components/HeaderSmall.astro";
+
+import Alert from "../components/Alert.astro";
+import Avatar from "../components/Avatar.astro";
+import Badge from "../components/Badge.astro";
+import Breadcrumbs from "../components/BreadCrumbs.astro";
+import Button from "../components/Button.astro";
+import ButtonGroup from "../components/ButtonGroup.astro";
+import Card from "../components/Card.astro";
+import DeviceMockups from "../components/DeviceMockups.astro";
+import Form from "../components/Form.astro";
+import Gallery from "../components/Gallery.astro";
+import Jumbotron from "../components/Jumbotron.astro";
+import Table from "../components/Table.astro";
+import Timeline from "../components/Timeline.astro";
+
+const title = "Components";
+const subtitle = "Component overview";
+---
+
+<Layout title="Components">
+  <div>
+    <HeaderSmall title={title} subtitle={subtitle} />
+  </div>
+  <main>
+    <div class="container pb-24">
+      <h2 class="my-4 text-lg font-bold dark:text-white">Alert</h2>
+      <Alert body="Hey I'm an alert!" />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Avatar</h2>
+      <Avatar />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Badge</h2>
+      <Badge title="Badge Title" />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Breadcrumbs</h2>
+      <Breadcrumbs />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Buttons</h2>
+      <Button text="Click Me" href="https://github.com" />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Button Group</h2>
+      <ButtonGroup
+        text1="Google"
+        href1="https://google.com"
+        text2="Yahoo"
+        href2="https://yahoo.com"
+      />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Card</h2>
+      <Card title="Card Title Here" body="Some Card Text" />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Device Mockups</h2>
+      <DeviceMockups
+        lightImage="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+        darkImage="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+      />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Form</h2>
+      <Form />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Gallery</h2>
+      <Gallery />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Jumbotron</h2>
+      <Jumbotron
+        title="Jumbotron Title"
+        subtitle="Jumbotron Body"
+        buttonLink1="https://google.com"
+        buttonText1="Googs"
+        buttonLink2="https://msn.com"
+        buttonText2="MSN"
+      />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Table</h2>
+      <!--Data set in the component frontmatter! -->
+      <Table />
+      <h2 class="my-4 text-lg font-bold dark:text-white">Timeline</h2>
+      <!--Data set in the component frontmatter! -->
+      <Timeline />
+    </div>
+  </main>
+</Layout>
+
+<style></style>
