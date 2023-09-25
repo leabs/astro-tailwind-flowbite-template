@@ -1,4 +1,6 @@
 ---
+
+import ButtonGroup from './ButtonGroup.astro';
 interface Props {
   projectTitle: string;
   body: string;
@@ -16,7 +18,7 @@ const { href, projectTitle, body, type, repo } = Astro.props;
   <div class="px-8 py-4 md:px-12 md:py-8">
   {
     type && (
-      <span class="bg-blue-200 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-100 mb-2">
+      <span class="bg-primary text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-100 mb-2">
         {type}
       </span>
     )
@@ -27,49 +29,5 @@ const { href, projectTitle, body, type, repo } = Astro.props;
   <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
     {body}
   </p>
-  <a
-    href={href}
-    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
-    >Demo
-    <svg
-      class="w-3.5 h-3.5 ml-2"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 14 10"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-    </svg>
-  </a>
-  {
-    repo && (
-      <a
-        href={repo}
-        class="ml-4 text-green-600 dark:text-green-700 hover:underline font-medium text-lg inline-flex items-center"
-      >
-        Repo
-        <svg
-          class="w-3.5 h-3.5 ml-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="green"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </div>
-      </a>
-    )
-  }
+  <ButtonGroup text1="3" href1="https://google.com" text2="Hey" href2="https://github.com" />
 </div>

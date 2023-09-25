@@ -69,6 +69,18 @@
       "href": "https://github.com",
       "about": "Project 4 description",
       "type": "WordPress"
+    },
+    {
+      "projectTitle": "Project 5",
+      "href": "https://github.com",
+      "about": "Project 5 description",
+      "type": "WordPress"
+    },
+    {
+      "projectTitle": "Project 6",
+      "href": "https://github.com",
+      "about": "Project 6 description",
+      "type": "WordPress"
     }
   ]
 }

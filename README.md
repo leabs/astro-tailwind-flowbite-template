@@ -40,6 +40,10 @@ const subtitle = "Contact me";
 
 **Also note:** you'll need to add the page to `src/data/site.json` in the `pages` array for the page to show up in the navigation. Or don't, it's your site. Maybe you don't want / need the new page in the nav.
 
+## Component Library
+
+I'm using the Flowbite component library, which is a Tailwind CSS. You can find components [here](https://flowbite.com/docs/components/accordion/). If you'd like to add components simply add them to the `src/components` directory and import them into your page.
+
 ## Site Logo
 
 Replace the image in `assets/logo.png` with your own logo. If it's not square, you'll need to adjust the `width` and `height` in `components/Nav.astro` file line 55.
