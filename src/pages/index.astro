@@ -1,18 +1,22 @@
 ---
-const title = data.siteName;
-
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/Header.astro";
 import data from "../data/site.json";
+import CTA from "../components/CTA.astro"
+import FeatureList from "../components/FeatureList.astro";
 import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title={data.siteName}>
   <main>
-    <Header title={title} subtitle={data.about} />
+    <Header title="Nice to see you" subtitle="Some subtitle here I guess" />
     <div class="container">
+		<CTA />
+      <br>
+	  <FeatureList />
       <Timeline />
     </div>
   </main>
 </Layout>
+

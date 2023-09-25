@@ -3,6 +3,13 @@ import data from "../data/site.json";
 
 import Button from "../components/Button.astro";
 import ButtonAlt from "../components/ButtonAlt.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
 ---
 
 <div class="mt-16">
@@ -10,7 +17,7 @@ import ButtonAlt from "../components/ButtonAlt.astro";
     <h1
       class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
     >
-      {data.siteName}
+     {title}
     </h1>
     <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
       {data.siteDescription}

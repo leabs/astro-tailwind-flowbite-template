@@ -1,0 +1,24 @@
+---
+import data from "../data/site.json";
+---
+
+<ul
+  class="flex flex-wrap items-center justify-center text-gray-900 dark:text-white"
+>
+  {
+    data.social.map((item) => {
+      return (
+        <li>
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mr-4 hover:underline hover:text-primary md:mr-6 "
+          >
+            {item.title}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
 import Form from "../components/Form.astro";
-
+import Social from "../components/Social.astro";
 const title = "Contact";
-const subtitle = "Contact me";
+const subtitle = "Contact me using the form below. Or find me online!";
 ---
 
 <Layout title="Contact">
@@ -13,8 +13,11 @@ const subtitle = "Contact me";
     <HeaderSmall title={title} subtitle={subtitle} />
   </div>
   <main>
-    <div class="container">
-    <Form />
+    <div class="max-w-md m-auto my-8">
+      <div class="mb-12">
+        <Social />
+      </div>
+      <Form />
     </div>
   </main>
 </Layout>

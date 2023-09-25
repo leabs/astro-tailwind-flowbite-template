@@ -1,0 +1,49 @@
+---
+const title = "Hey";
+
+const sections = [
+  "pee",
+  "Legal",
+  "Business Automation",
+  "Finance",
+  "Enterprise Design",
+  "Operations",
+];
+const sectionsText = [
+  "Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan."
+];
+---
+
+<section class="bg-stone-100 dark:bg-slate-800 mb-8">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <div class="max-w-screen-md mb-8 lg:mb-16">
+      <h2
+        class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+      >
+        {title}
+      </h2>
+    </div>
+    <div
+      class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+    >
+      <!--List out all the sections and body text -->
+      {
+        sections.map((section) => (
+          <div class="flex flex-col">
+            <div class="flex-shrink-0">
+ 
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                {section}
+              </h3>
+              <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
+                {sectionsText}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
