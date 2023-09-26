@@ -1,4 +1,4 @@
-# Astro Tailwind Template
+# Astro Tailwind Flowbite Template
 
 This is a website template that uses Astro 3.0 along with Tailwind to create a static website for various smaller projects. I'm hoping to use this as a foundation for small projects in the future such as building friends or small businesses fast and simple static sites.
 
@@ -54,6 +54,8 @@ Replace the image in `public/favicon.svg` with your own favicon.
 
 ## Project Images
 
+To Do.
+
 Project images should be added to `assets`. You can set their image name in `src/data/site.json` in the `projects` array. You can also set the project title, description, and link there as well.
 
 ## Site Colors
@@ -61,6 +63,8 @@ Project images should be added to `assets`. You can set their image name in `src
 Colors for primary, secondary, and accent are set in the `tailwind.config.cjs` file. You can change them there to whatever you'd like. A tailwind pallete or even a hex or rgb value will work.
 
 ## Site Fonts
+
+To Do.
 
 ## Contributing
 

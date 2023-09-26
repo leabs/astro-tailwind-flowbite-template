@@ -24,20 +24,20 @@
   ],
   "social": [
     {
-      "title": "Twitter",
-      "href": "https://twitter.com/"
+      "title": "GitHub",
+      "href": "https://github.com/leabs"
     },
     {
-      "title": "Facebook",
-      "href": "https://facebook.com/"
-    },
-    {
-      "title": "Instagram",
-      "href": "https://instagram.com/"
+      "title": "YouTube",
+      "href": "https://www.youtube.com/@shadowstack"
     },
     {
       "title": "LinkedIn",
-      "href": "https://linkedin.com/"
+      "href": "https://www.linkedin.com/in/stevenleabo/"
+    },
+    {
+      "title": "CodePen",
+      "href": "https://codepen.io/shadowstack/pens/popular"
     }
   ],
   "projects": [
