@@ -4,17 +4,17 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import CTA from "../components/CTA.astro";
 import FeatureList from "../components/FeatureList.astro";
-import FeaturedVideo from "../components/FeaturedVideo.astro";
+
 import Timeline from "../components/Timeline.astro";
 
 import data from "../data/site.json";
 ---
+
 <Layout title={data.siteName}>
   <main>
-      <Header />
-      <CTA />
-      <FeatureList />
-      <FeaturedVideo />
-      <Timeline />
+    <Header />
+    <CTA />
+    <FeatureList />
+    <Timeline />
   </main>
 </Layout>
