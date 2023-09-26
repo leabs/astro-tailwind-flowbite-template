@@ -3,28 +3,24 @@ import data from "../data/site.json";
 
 import Button from "../components/Button.astro";
 import ButtonAlt from "../components/ButtonAlt.astro";
-
-interface Props {
-  title: string;
-  subtitle: string;
-}
-
-const { title, subtitle } = Astro.props;
+const title = "Nice to see you!"
 ---
 
-<div class="my-16">
-  <div class="text-center justify-self-center items-center p-2">
-    <h1
-      class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
-    >
-     {title}
-    </h1>
-    <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
-      {data.siteDescription}
-    </p>
-    <div class="mt-10 flex items-center justify-center gap-x-6">
-      <Button text="My Projects" href="/projects" />
-      <ButtonAlt text="Contact Me" href="/contact" />
+<div class="bg-gradient-to-b from-white dark:from-slate-600">
+  <div class="py-16">
+    <div class="text-center justify-self-center items-center p-2">
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
+      >
+        {title}
+      </h1>
+      <p class="my-8 text-lg text-gray-500 dark:text-gray-400">
+        {data.siteDescription}
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <Button text="My Projects" href="/projects" />
+        <ButtonAlt text="Contact Me" href="/contact" />
+      </div>
     </div>
   </div>
 </div>

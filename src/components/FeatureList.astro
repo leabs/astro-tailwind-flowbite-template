@@ -1,27 +1,27 @@
 ---
 import Heading from "./Heading.astro";
 
-const heading = "Some of the things we do";
+const heading = "Some things I can help you with";
 
 const sections = [
-  "Something",
-  "Legal",
-  "Business Automation",
-  "Finance",
-  "Enterprise Design",
-  "Operations",
+  "Custom Static Site",
+  "WordPress CMS",
+  "SEO",
+  "Analytics",
+  "Content Creation",
+  "Custom React Components",
 ];
 const sectionsText = [
-  "Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.",
-  "Something else",
-  "And more",
-  "And more here",
-  "Something else here too",
-  "And more here",
+  "I can build you a custom static site using Astro, Next, or Jekyll. Static sites are fast, secure, and easy to maintain.",
+  "Do you want to add content like blogs, landing pages, or custom sections? I can help set up a WordPress site for you.",
+  "SEO is important for your site to be found. I can help you with SEO best practices and tools to help you rank higher.",
+  "Using analytics tools like Google Analytics, I can help you track your site's performance and make improvements.",
+  "I've been using Adobe products for over 10 years. I can help you create content for your site, social media, and even custom YouTube videos.",
+  "Need something more custom for an app? I can help you build custom React components for your project.",
 ];
 ---
 
-<section class="bg-stone-100 dark:bg-slate-800 mb-8">
+<div class="mb-12 bg-stone-100 dark:bg-slate-800">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <Heading heading={heading} />
     <div
@@ -35,7 +35,7 @@ const sectionsText = [
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                   {sections[sections.indexOf(section)]}
                 </h3>
-                <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
+                <p class="mb-8 mt-2 text-lg text-gray-500 dark:text-gray-400">
                   {sectionsText[sections.indexOf(section)]}
                 </p>
               </div>
@@ -45,4 +45,4 @@ const sectionsText = [
       }
     </div>
   </div>
-</section>
+</div>

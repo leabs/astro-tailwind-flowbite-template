@@ -1,0 +1,41 @@
+---
+import Heading from "./Heading.astro";
+
+const href = "https://www.youtube.com/embed/tWEx_cm0cf8?si=pRxE4pCP4cTAv4MU"
+const subtitle = "Let's try view transitions in a new Astro project. View transitions update your page content without the browser’s normal, full-page navigation refresh and provide seamless animations between pages."
+---
+
+<div class="mb-12">
+  <div class="text-center">
+    <Heading heading="Featured Video: Astro View Transitions" />
+    <p
+      class="max-w-4xl m-auto mb-8 mt-2 text-lg text-gray-500 dark:text-gray-400"
+    >
+      {subtitle}
+    </p>
+  </div>
+  <div
+    id="video-container"
+    class="p-4 m-auto mb-12 rounded-[2rem] shadow-lg overflow-hidden w-[872px] h-[560px] bg-white dark:bg-slate-700"
+  >
+    <iframe
+      loading="lazy"
+      width="902"
+      height="530"
+      class="justify-self-center rounded-[1rem]"
+      src={href}
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<style>
+  #video-container {
+    max-width: 100%;
+  }
+  #video-container iframe {
+    max-width: 100%;
+  }
+</style>
