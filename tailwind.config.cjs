@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/flowbite/**/*.js'
+	],
   theme: {
     colors:{
       primary: '#17202A',
@@ -25,4 +28,7 @@ module.exports = {
       translate: ["dark"],
     },
   },
-};
+	plugins: [
+		require('flowbite/plugin')
+	],
+}

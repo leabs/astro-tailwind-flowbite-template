@@ -3,22 +3,23 @@ import data from "../data/site.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
-<nav class="bg-stone-100 border-gray-200 dark:bg-slate-800" id="navbar">
+<nav
+  transition:persist
+  class="bg-stone-100 border-gray-200 dark:bg-slate-800"
+  id="triggerEl"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
-    <a href="/" class="flex items-center">
+    
       <span
         class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >{data.siteName}</span
       >
-    </a>
+   
     <button
-      onclick="
-      toggleNavbar()
-"
       data-collapse-toggle="navbar-default"
-      id="navMenu"
+      id="triggerEl"
       type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       aria-controls="navbar-default"
@@ -40,7 +41,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
           d="M1 1h15M1 7h15M1 13h15"></path>
       </svg>
     </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+    <div class="hidden w-full md:block md:w-auto" id="targetEl">
       <ul
         class="font-medium items-center flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-stone-100 dark:bg-slate-800 md:dark:bg-slate-800 dark:border-gray-700"
       >
@@ -50,7 +51,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
               <li>
                 <a
                   href={page.href}
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-primary dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   aria-current="page"
                 >
                   {page.title}
@@ -67,7 +68,6 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   </div>
 </nav>
 
-
 <style>
   .hamburg {
     fill: black;
@@ -78,19 +78,51 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 </style>
 
 <script>
-  function hideNav() {
-    const navbar = document.getElementById("navbar-default");
-    if (navbar) {
-      navbar.classList.toggle("hidden");
-    }
-  }
+  // set the target element that will be collapsed or expanded (eg. navbar menu)
+  const $targetEl = document.getElementById("targetEl");
 
-  document.addEventListener("astro:after-swap", hideNav);
+  // optionally set a trigger element (eg. a button, hamburger icon)
+  const $triggerEl = document.getElementById("triggerEl");
 
-  function hideNavOnNewPage() {
-    const navbar = document.getElementById("navbar-default");
-    if (navbar) {
-      navbar.classList.add("hidden");
+  // optional options with default values and callback functions
+  const options = {
+    onCollapse: () => {
+      console.log("element has been collapsed");
+    },
+    onExpand: () => {
+      console.log("element has been expanded");
+    },
+    onToggle: () => {
+      console.log("element has been toggled");
+    },
+  };
+
+  import { Collapse } from "flowbite";
+
+  /*
+   * $targetEl: required
+   * $triggerEl: optional
+   * options: optional
+   */
+  const collapse = new Collapse($targetEl, $triggerEl, options);
+
+  // show the target element
+  collapse.expand();
+
+  // hide the target element
+  collapse.collapse();
+
+  // toggle the visibility of the target element
+  collapse.toggle();
+
+  //open page with collapsed menu
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      // This only runs once.
+      collapse.collapse();
     }
-  }
+  );
+
+  document.addEventListener("astro:after-swap", collapse.expand);
 </script>
