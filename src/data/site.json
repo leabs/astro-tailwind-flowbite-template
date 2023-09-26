@@ -20,10 +20,6 @@
     {
       "title": "Contact",
       "href": "/contact"
-    },
-    {
-      "title": "Components",
-      "href": "/components"
     }
   ],
   "social": [
@@ -50,8 +46,8 @@
       "href": "project/one",
       "about": "Database of books and reviews from users complete with auth and comments and so much more!!!",
       "type": "Python, Django, HTML, CSS",
-      "image": "../assets/screen.png",
-      "repo": "https://github.com"
+      "repo": "https://github.com",
+      "image": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
     },
     {
       "projectTitle": "Project 2",
@@ -59,7 +55,8 @@
       "about": "Video dashboard using JavaScript that allows user to build and share a layout of videos from YouTube.",
       "repo": "https://github.com",
       "type": "JavaScript, HTML, CSS",
-      "image": "../assets/screen2.png"
+      "image": "../assets/screen2.png",
+      "featured": true
     },
     {
       "projectTitle": "Project 3",

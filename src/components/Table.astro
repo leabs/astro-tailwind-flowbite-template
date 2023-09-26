@@ -29,7 +29,7 @@ const data = [
       class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
     >
       {
-        heading.map((item, index) => (
+        heading.map((item) => (
           <th scope="col" class="px-6 py-3">
             {item}
           </th>
@@ -38,7 +38,7 @@ const data = [
     </thead>
     <tbody>
       {
-        data.map((item, index) => (
+        data.map((item) => (
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
             <th
               scope="row"

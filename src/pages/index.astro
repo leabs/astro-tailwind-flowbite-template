@@ -2,20 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/Header.astro";
+import Heading from "../components/Heading.astro";
 import data from "../data/site.json";
-import CTA from "../components/CTA.astro"
+import CTA from "../components/CTA.astro";
 import FeatureList from "../components/FeatureList.astro";
 import Timeline from "../components/Timeline.astro";
+import Social from "../components/Social.astro";
 ---
 
 <Layout title={data.siteName}>
   <main>
     <Header title="Nice to see you" subtitle="Some subtitle here I guess" />
     <div class="container">
-		<CTA />
-      <br>
-	  <FeatureList />
-      <Timeline />
+      <section class="mb-8">
+        <CTA />
+      </section>
+      <section class="mb-8">
+        <FeatureList />
+      </section>
+      <section class="mb-8 px-8">
+        <Timeline />
+      </section>
+      <section class="w-full text-center mb-12">
+        <Heading heading="Find me online!" />
+        <Social />
+	  </sections>
     </div>
   </main>
 </Layout>

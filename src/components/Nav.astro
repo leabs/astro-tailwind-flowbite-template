@@ -14,7 +14,9 @@ import DarkModeToggle from "./DarkModeToggle.astro";
       >
     </a>
     <button
-    onclick="toggleNavbar()"
+      onclick="
+      toggleNavbar()
+"
       data-collapse-toggle="navbar-default"
       id="navMenu"
       type="button"
@@ -38,7 +40,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
           d="M1 1h15M1 7h15M1 13h15"></path>
       </svg>
     </button>
-    <div class="w-full md:block md:w-auto" id="navbar-default">
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul
         class="font-medium items-center flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-stone-100 dark:bg-slate-800 md:dark:bg-slate-800 dark:border-gray-700"
       >
@@ -66,12 +68,6 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 </nav>
 
 <style>
-  body .active {
-    background-color: red;
-  }
-  body.dark .active {
-    background-color: green;
-  }
   .hamburg {
     fill: black;
   }
@@ -81,30 +77,19 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 </style>
 
 <script>
-  //Adds active class to navbar item
-  const navbar = document.getElementById("#navbar");
-  const navLinks = navbar ? navbar.querySelectorAll("a") : [];
-  const currentURL = window.location.href;
-  navLinks.forEach((link) => {
-    if (link.href === currentURL) {
-      link.classList.add("active");
+  function hideNav() {
+    const navbar = document.getElementById("navbar-default");
+    if (navbar) {
+      navbar.classList.toggle("hidden");
     }
-  });
+  }
 
-  document.addEventListener('astro:after-swap', () => {
-    const navbar = document.getElementById("navbar-default");
-    //Add hidden class
-    navbar.classList.toggle("hidden");
-    
-  });
-  
-</script>
+  document.addEventListener("astro:after-swap", hideNav);
 
-<script is:inline>
-  //Adds hidden class to navbar on mobile
-  function toggleNavbar() {
+  function hideNavOnNewPage() {
     const navbar = document.getElementById("navbar-default");
-    //Add hidden class
-    navbar.classList.toggle("hidden");
+    if (navbar) {
+      navbar.classList.add("hidden");
+    }
   }
 </script>
