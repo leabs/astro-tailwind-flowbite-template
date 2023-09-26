@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-		'./node_modules/flowbite/**/*.js'
-	],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   theme: {
-    colors:{
-      primary: '#17202A',
-      secondary: '#ecc94b',
-      transparent: 'transparent',
-      current: 'currentColor',
+    colors: {
+      primary: "#17202A",
+      secondary: "#ecc94b",
+      transparent: "transparent",
+      current: "currentColor",
       slate: colors.slate,
       stone: colors.stone,
       blue: colors.blue,
@@ -28,7 +28,5 @@ module.exports = {
       translate: ["dark"],
     },
   },
-	plugins: [
-		require('flowbite/plugin')
-	],
-}
+  plugins: [require("flowbite/plugin")],
+};

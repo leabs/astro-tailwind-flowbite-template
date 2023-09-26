@@ -2,6 +2,8 @@
 
 This is a website template that uses Astro 3.0 along with Tailwind to create a static website for various smaller projects. I'm hoping to use this as a foundation for small projects in the future such as building friends or small businesses fast and simple static sites.
 
+This uses all the great features of Astro 3.0 like View Transitions API support, automatic asset optimization, better build output and more. You can read more about Astro 3.0 [here](https://astro.build/blog/astro-3).
+
 This is a work in progress, so please feel free to send me a pull request for any improvements you make. Look at the contributing section below for more information.
 
 ## Getting Started
