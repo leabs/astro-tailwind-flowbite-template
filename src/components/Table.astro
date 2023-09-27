@@ -1,29 +1,26 @@
 ---
-const heading = ["Product Name", "Color", "Category", "Price"];
+const heading = ["Name", "Time", "Price"];
 
 const data = [
   {
-    name: 'Apple MacBook Pro 17"',
-    color: "Silver",
-    category: "Laptop",
+    name: "House Painting",
+    time: "2 Days",
     price: "$2999",
   },
   {
-    name: "Microsoft Surface Pro",
-    color: "White",
-    category: "Laptop PC",
+    name: "Interior Room Painting",
+    time: "1 Day",
     price: "$1999",
   },
   {
-    name: "Magic Mouse 2",
-    color: "Black",
-    category: "Accessories",
-    price: "$99",
+    name: "Custom Work",
+    time: "Call",
+    price: "Call",
   },
 ];
 ---
 
-<div class="relative overflow-x-auto">
+<div class="relative overflow-x-auto mb-12">
   <table class="w-full text-sm text-left text-gray-700 dark:text-gray-400">
     <thead
       class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
@@ -46,8 +43,7 @@ const data = [
             >
               {item.name}
             </th>
-            <td class="px-6 py-4">{item.color}</td>
-            <td class="px-6 py-4">{item.category}</td>
+            <td class="px-6 py-4">{item.time}</td>
             <td class="px-6 py-4">{item.price}</td>
           </tr>
         ))

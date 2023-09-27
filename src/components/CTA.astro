@@ -1,21 +1,17 @@
 ---
 // import the Image component and the image
 import { Image } from 'astro:assets';
-import darkImage from "../assets/cta-dashboard-mockup-dark.svg"; 
+import darkImage from "../assets/house.jpg"; 
 import lightImage from "../assets/cta-dashboard-mockup.svg"; 
-const title = "I'm a developer that enjoys building things"
-const body = "I have over 6 years professional experience. I have collaborated with a diverse range of clients, from start-ups to larger companies. My areas of expertise include building sites with visually appealing styles, constructing layouts and components based on designs, and utilizing the latest web development technologies. If you believe I can assist your business, please feel free to contact me. I am based in Upstate NY."
+const title = "I'm a painter and I can work for you"
+const body = "With over 6 years experience I have painted over 1000 houses. I can work for you and paint your house."
 ---
 <section class="mb-12 bg-stone-100 dark:bg-slate-800">
     <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <Image src={darkImage} class="w-full hidden dark:block" alt="A description of my image." />
-        <Image src={lightImage} class="w-full dark:hidden border-solid border-2" alt="A description of my image." />
-        <!-- <img class="w-full dark:hidden border-solid border-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image"> -->
+        <Image src={darkImage} class="w-full dark:block" alt="A description of my image." />
         <div class="mt-4 md:mt-0">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{title}</h2>
             <p class="mb-8 mt-2 text-lg text-gray-700 dark:text-gray-400">{body}</p>
-
         </div>
     </div>
 </section>

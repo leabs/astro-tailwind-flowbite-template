@@ -5,6 +5,8 @@ import HeaderSmall from "../components/HeaderSmall.astro";
 import Form from "../components/Form.astro";
 const title = "Contact";
 const subtitle = "Contact me using the form below. Or find me online!";
+
+import data from "../data/site.json"
 ---
 
 <Layout title="Contact">
@@ -12,6 +14,9 @@ const subtitle = "Contact me using the form below. Or find me online!";
     <HeaderSmall title={title} subtitle={subtitle} />
   </div>
   <main>
+    <div class="p-4">
+      <p class="text-center mb-4 text-base font-normal text-gray-700 dark:text-white">My phone is {data.contact.phone} and my buisness is located at {data.contact.address}. Reach out to me at my email {data.contact.email}</p>
+    </div>
     <div class="max-w-md m-auto my-8">
       <Form />
     </div>

@@ -2,8 +2,7 @@
 import data from "../data/site.json";
 
 import Button from "../components/Button.astro";
-import ButtonAlt from "../components/ButtonAlt.astro";
-const title = "Nice to see you!"
+const title = "Painting is our business"
 ---
 
 <div class="bg-gradient-to-b from-white dark:from-slate-600">
@@ -15,11 +14,10 @@ const title = "Nice to see you!"
         {title}
       </h1>
       <p class="my-8 text-lg text-gray-700 dark:text-white">
-        {data.siteDescription}
+        I'm a painter and I like to paint things.
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <Button text="My Projects" href="/projects" />
-        <ButtonAlt text="Contact Me" href="/contact" />
+        <Button text="Contact Me" href="/contact" />
       </div>
     </div>
   </div>

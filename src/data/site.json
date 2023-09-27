@@ -1,8 +1,8 @@
 {
-  "owner": "John Smith",
-  "siteName": "John Smith's Portfolio",
-  "siteDescription": "John Smith's Portfolio for potential employers",
-  "about": "I'm a web developer from Anytown, USA. I like to build things with HTML, CSS, and JavaScript.",
+  "owner": "John Smith Jr.",
+  "siteName": "John Smith's Jr. Painter LLC",
+  "siteDescription": "John Smith's Jr. Portfolio for potential employers",
+  "about": "I'm a painter and I like to paint things.",
   "contact": {
     "email": "bob@aol.com",
     "phone": "555-555-5555",
@@ -14,10 +14,6 @@
       "href": "/"
     },
     {
-      "title": "Projects",
-      "href": "/projects"
-    },
-    {
       "title": "Contact",
       "href": "/contact"
     }
@@ -25,19 +21,19 @@
   "social": [
     {
       "title": "GitHub",
-      "href": "https://github.com/leabs"
+      "href": "https://github.com/johnsmith"
     },
     {
       "title": "YouTube",
-      "href": "https://www.youtube.com/@shadowstack"
+      "href": "https://www.youtube.com/@johnsmith"
     },
     {
       "title": "LinkedIn",
-      "href": "https://www.linkedin.com/in/stevenleabo/"
+      "href": "https://www.linkedin.com/in/johnsmith/"
     },
     {
       "title": "CodePen",
-      "href": "https://codepen.io/shadowstack/pens/popular"
+      "href": "https://codepen.io/johnsmith/pens/popular"
     }
   ],
   "projects": [
