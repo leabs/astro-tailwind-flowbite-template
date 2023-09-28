@@ -37,7 +37,7 @@
       : window.localStorage.setItem("theme", "dark");
     checkTheme();
   });
-
+  document.addEventListener("astro:page-load", checkTheme);
   //VIEWTRANSITION event listener that enables the checkTheme fuction to run on page transition
   document.addEventListener("astro:after-swap", checkTheme);
 </script>

@@ -22,8 +22,8 @@ import data from "../data/site.json";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen ">
+  <body class="dark:bg-slate-800 bg-stone-100">
+    <div class="min-h-screen">
       <Nav />
       <div class="container">
         <slot />
@@ -55,5 +55,10 @@ import data from "../data/site.json";
         }
       }
     </style>
-  </body>
+  </body><script>
+    //if local storage theme is set to dark, add dark class to HTML tag
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
 </html>
