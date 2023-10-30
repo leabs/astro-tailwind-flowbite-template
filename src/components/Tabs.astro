@@ -1,0 +1,60 @@
+---
+const tabs = [
+  {
+    tabTitle: "Profile",
+    tabContent:
+      "This is some placeholder content the Profile tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.",
+  },
+  {
+    tabTitle: "Dashboard",
+    tabContent:
+      "This is some placeholder content the Dashboard tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.",
+  },
+  {
+    tabTitle: "Settings",
+    tabContent:
+      "This is some placeholder content the Settings tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.",
+  },
+];
+---
+
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+  <ul
+    class="flex flex-wrap -mb-px text-sm font-medium text-center"
+    id="default-tab"
+    data-tabs-toggle="#default-tab-content"
+    role="tablist"
+  >
+    {
+      tabs.map((tab, index) => (
+        <li class="mr-2" role="presentation">
+          <button
+            class="inline-block p-4 border-b-2 rounded-t-lg"
+            id={`tab-${index}`}
+            data-tabs-target={`#tab-content-${index}`}
+            type="button"
+            role="tab"
+            aria-controls={`tab-content-${index}`}
+            aria-selected="false"
+          >
+            {tab.tabTitle}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<div id="default-tab-content">
+  {
+    tabs.map((tab, index) => (
+      <div
+        class="hidden p-4 rounded-lg bg-stone-50 dark:bg-slate-900"
+        id={`tab-content-${index}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${index}`}
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400">{tab.tabContent}</p>
+      </div>
+    ))
+  }
+</div>

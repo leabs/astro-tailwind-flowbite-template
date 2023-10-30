@@ -1,9 +1,15 @@
 ---
+const title = "Components";
+const subtitle =
+  "Component overview. Some properties for this are inline (like heading, button, etc) while others have properties in the component file (table, modal, etc).";
+
 import Layout from "../layouts/Layout.astro";
 
+//Added 9/25/2023, HeaderSmall is the small hero banner header, while Heading renders an h2 tag
 import HeaderSmall from "../components/HeaderSmall.astro";
 import Heading from "../components/Heading.astro";
 
+//Added 9/25/2023
 import Alert from "../components/Alert.astro";
 import Avatar from "../components/Avatar.astro";
 import Badge from "../components/Badge.astro";
@@ -18,14 +24,20 @@ import Jumbotron from "../components/Jumbotron.astro";
 import Table from "../components/Table.astro";
 import Timeline from "../components/Timeline.astro";
 
+//Added 10/8/23
 import VisualImageHeading from "../components/VisualImageHeading.astro";
 import Team from "../components/Team.astro";
 import Pricing from "../components/Pricing.astro";
 import FAQ from "../components/FAQ.astro";
 import CustomerLogos from "../components/CustomerLogos.astro";
 
-const title = "Components";
-const subtitle = "Component overview";
+//Added 10/30/23
+import Blockquote from "../components/Blockquote.astro";
+import Tooltip from "../components/Tooltip.astro";
+import Tabs from "../components/Tabs.astro";
+import Rating from "../components/Rating.astro";
+import Modal from "../components/Modal.astro";
+import IndicatorCount from "../components/IndicatorCount.astro";
 ---
 
 <Layout title="Components">
@@ -95,8 +107,24 @@ const subtitle = "Component overview";
 
       <Heading heading="Customer Logos" />
       <CustomerLogos />
+
+      <Heading heading="Block Quote" />
+      <Blockquote text="Hey here is some quote from somewhere" />
+
+      <Heading heading="Tooltip" />
+      <Tooltip button="Button Text Here" tooltip="Some tooltip text" />
+
+      <Heading heading="Tabs" />
+      <Tabs />
+
+      <Heading heading="Rating" />
+      <Rating rating={4} />
+
+      <Heading heading="Modal" />
+      <Modal />
+
+      <Heading heading="Indicator Count" />
+      <IndicatorCount button="Messages" count={69} href="https://google.com" />
     </div>
   </main>
 </Layout>
-
-<style></style>
