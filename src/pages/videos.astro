@@ -1,0 +1,32 @@
+---
+const title = "Videos";
+const subtitle = "Something";
+
+import Layout from "../layouts/Layout.astro";
+
+import Gallery from "../components/Gallery.astro";
+import HeaderSmall from "../components/HeaderSmall.astro";
+import ProjectCard from "../components/ProjectCards.astro";
+import data from "../data/site.json";
+
+type Props = {
+  projectTitle: string;
+  href: string;
+  body: string;
+  type?: string;
+  repo?: string;
+};
+---
+
+<Layout title="Videos">
+  <main>
+    <HeaderSmall title={title} subtitle={subtitle} />
+    <div class="">
+      <section class="section">
+        <Gallery />
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style></style>

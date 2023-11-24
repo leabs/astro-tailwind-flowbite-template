@@ -1,7 +1,7 @@
 {
-  "owner": "John Smith",
-  "siteName": "John Smith's Portfolio",
-  "siteDescription": "John Smith's Portfolio for potential employers",
+  "owner": "Steven Leabo",
+  "siteName": "Steven Leabo's Portfolio",
+  "siteDescription": "Steven Leabo Web Developer from upstate new york in Syracuse area",
   "about": "I'm a web developer from Anytown, USA. I like to build things with HTML, CSS, and JavaScript.",
   "contact": {
     "email": "bob@aol.com",
@@ -16,6 +16,10 @@
     {
       "title": "Projects",
       "href": "/projects"
+    },
+    {
+      "title": "Videos",
+      "href": "/videos"
     },
     {
       "title": "Contact",

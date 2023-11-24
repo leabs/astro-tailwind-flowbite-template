@@ -11,6 +11,14 @@ const sections = [
   "Content Creation",
   "Custom React Components",
 ];
+const sectionIcons = [
+  "/icons/staticsites.svg",
+  "/icons/wordpress.svg",
+  "/icons/seo.svg",
+  "/icons/analytics.svg",
+  "/icons/contentcreation.svg",
+  "/icons/react.svg"
+]
 const sectionsText = [
   "I can build you a custom static site using Astro, Next, or Jekyll. Static sites are fast, secure, and easy to maintain.",
   "Do you want to add content like blogs, landing pages, or custom sections? I can help set up a WordPress site for you.",
@@ -19,6 +27,16 @@ const sectionsText = [
   "I've been using Adobe products for over 10 years. I can help you create content for your site, social media, and even custom YouTube videos.",
   "Need something more custom for an app? I can help you build custom React components for your project.",
 ];
+
+import lightImageseo from "/icons/seo.svg";
+import darkImageseo from "/icons/seo-dark.svg";
+
+interface Props {
+  darkImageseo: string;
+  lightImageseo: string;
+}
+
+const { darkImageseo, lightImageseo } = Astro.props;
 ---
 
 <div class="mb-12 bg-stone-100 dark:bg-slate-800">
@@ -32,6 +50,17 @@ const sectionsText = [
           return (
             <div class="flex flex-col">
               <div class="mt-6">
+                <img
+                  src={lightImageseo}
+                  class="dark:hidden w-[272px] h-[572px]"
+                  alt=""
+                />
+                <img
+                  src={darkImageseo}
+                  class="hidden dark:block w-[272px] h-[572px]"
+                  alt=""
+                />
+                <img class="mb-4" width="60" height="60" src={sectionIcons[sections.indexOf(section)]} alt="" />
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                   {sections[sections.indexOf(section)]}
                 </h3>
@@ -46,3 +75,13 @@ const sectionsText = [
     </div>
   </div>
 </div>
+
+<style>
+  svg path {
+    stroke: #000;
+  }
+  /* Set svg stroke color based on theme */
+  body.dark svg path {
+    stroke: #fff;
+  }
+</style>

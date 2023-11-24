@@ -1,20 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Header from "../components/Header.astro";
+import HeaderSmall from "../components/HeaderSmall.astro";
 import CTA from "../components/CTA.astro";
 import FeatureList from "../components/FeatureList.astro";
-
+import CustomGithubSection from "../components/CustomGithubSection.astro";
 import Timeline from "../components/Timeline.astro";
 
 import data from "../data/site.json";
+
 ---
 
 <Layout title={data.siteName}>
   <main>
-    <Header />
+    <HeaderSmall title="Freelance Frontend Web Developer" subtitle="I can help you build out projects and bring your ideas to life" />
+    
     <CTA />
+    <CustomGithubSection />
+    
     <FeatureList />
     <Timeline />
   </main>
 </Layout>
+
+<script></script>
