@@ -44,6 +44,8 @@ import Carousel from "../components/Carousel.astro";
 import Banner from "../components/Banner.astro";
 import Drawer from "../components/Drawer.astro";
 import GalleryMasonry from "../components/GalleryMasonry.astro";
+import GalleryFeatured from "../components/GalleryFeatured.astro";
+import Kbd from "../components/Kbd.astro";
 ---
 
 <Layout title="Components">
@@ -92,6 +94,9 @@ import GalleryMasonry from "../components/GalleryMasonry.astro";
 
       <Heading heading="Gallery (Masonry)" />
       <GalleryMasonry />
+
+      <Heading heading="Gallery (Featured)" />
+      <GalleryFeatured />
 
       <Heading heading="Jumbotron" />
       <Jumbotron />
@@ -143,6 +148,11 @@ import GalleryMasonry from "../components/GalleryMasonry.astro";
 
       <Heading heading="Drawer" />
       <Drawer />
+
+      <Heading heading="Kbd" />
+      <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
+        Press <Kbd key="Shift" /> + <Kbd key="U" /> in this example.
+      </p>
     </div>
   </main>
 </Layout>
