@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import GithubIllustration from "../assets/github-repos.png";
+import ProjectVideoZenmode from "./ProjectVideoZenmode.astro";
 import ButtonAlt from "./ButtonAlt.astro";
 const title = "Projects on GitHub";
 const body =
@@ -42,12 +41,7 @@ const repoCount = await fetch(
       <ButtonAlt text={buttonTwoText} href={buttonTwoLink} />
     </div>
     <div class="mt-4 lg:mt-0 lg:col-span-5 lg:flex">
-      <Image
-        src={GithubIllustration}
-        alt="GitHub Logo"
-        width="1024"
-        height="739"
-      />
+      <ProjectVideoZenmode />
     </div>
   </div>
 </section>

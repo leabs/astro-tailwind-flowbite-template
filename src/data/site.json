@@ -48,9 +48,9 @@
     {
       "projectTitle": "Anaren.com",
       "href": "project/one",
-      "about": "Database of books and reviews from users complete with auth and comments and so much more!!!",
-      "type": "Python, Django, HTML, CSS",
-      "video": "/Anaren.mp4", 
+      "about": "Full website redesign and development for Anaren Inc. using Drupal 7.  This project included a custom theme, custom modules, and custom views.  The site also includes DataTables for Anaren's vast product catalog.",
+      "type": "Drupal, PHP, MySQL, HTML, CSS, DataTables",
+      "video": "anaren", 
       "image": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
     },
     {
@@ -60,6 +60,7 @@
       "repo": "https://github.com",
       "type": "JavaScript, HTML, CSS",
       "image": "../assets/screen2.png",
+      "video": "zenmode", 
       "featured": true
     },
     {

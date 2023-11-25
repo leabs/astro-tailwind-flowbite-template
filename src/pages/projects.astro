@@ -2,23 +2,19 @@
 const title = "Projects";
 const subtitle = "Some Projects";
 
+import ProjectVideoAnaren from "../components/ProjectVideoAnaren.astro";
+import ProjectVideoZenmode from "../components/ProjectVideoZenmode.astro";
+const AnarenComponent = ProjectVideoAnaren;
+const ZenmodeComponent = ProjectVideoZenmode;
+
 import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
 import ProjectCard from "../components/ProjectCards.astro";
-import data from "../data/site.json";
-
-import { Image } from "astro:assets";
+import ProjectCards from "../components/ProjectCards.astro";
 
 
-type Props = {
-  projectTitle: string;
-  href: string;
-  body: string;
-  type?: string;
-  repo?: string;
-  video?: string;
-};
+
 ---
 
 <Layout title="Projects">
@@ -27,34 +23,7 @@ type Props = {
     <div class="">
       <section class="section">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-          <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-8">
-            {
-              data.projects.map(
-                (
-                  value: {
-                    projectTitle: string;
-                    href: string;
-                    about: string;
-                    repo?: string;
-                    type?: string;
-                    video?: string;
-                  },
-                  index: number
-                ) => {
-                  return (
-                    <ProjectCard
-                      projectTitle={value.projectTitle}
-                      href={value.href}
-                      body={value.about}
-                      type={value.type}
-                      repo={value.repo}
-                      video={value.video}
-                    />
-                  );
-                }
-              )
-            }
-          </div>
+          <ProjectCards />
         </div>
       </section>
     </div>

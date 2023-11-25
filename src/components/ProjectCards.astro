@@ -1,49 +1,57 @@
 ---
 import Button from "./Button.astro";
-interface Props {
-  projectTitle: string;
-  body: string;
-  href: string;
-  type?: string;
-  repo?: string;
-  external?: boolean;
-  video?: string;
-}
 
-const { href, projectTitle, body, type, repo, video } = Astro.props;
 
 import ProjectVideoAnaren from "./ProjectVideoAnaren.astro";
+import ProjectVideoZenmode from "./ProjectVideoZenmode.astro";
+
+
+ const projects = [
+    {
+      title: "Anaren",
+      body: "A web app for Anaren's IoT platform.",
+      href: "/project/one",
+      type: "Web App",
+      repo: "",
+      videoComponent: "ProjectVideoAnaren"
+      },
+    {
+      title: "Zenmode",
+      body: "A web app for Anaren's IoT platform.",
+      href: "/project/two",
+      type: "Web App",
+      repo: "",
+      videoComponent: "ProjectVideoZenmode"
+      }
+]
+    
+
 ---
 
-<div
-  class="bg-gray-50 dark:bg-gray-900 border border-gray-200 shadow-lg dark:border-gray-700 rounded-lg"
->
-  <a href={href}>
-    {
-      video && (
-        <ProjectVideoAnaren
-          video={video}
-        />
-      )
-    }
-    <div class="px-8 py-8">
-      {
-        type && (
-          <span class="bg-primary text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-100 mb-2">
-            {type}
-          </span>
-        )
-      }
-      <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-        {projectTitle}
-      </h2>
-      <p class="text-lg font-normal text-gray-700 dark:text-gray-400 mb-4">
-        {body}
-      </p>
-      <Button
-        text="More Info"
-        href={href}
-      />
-    </div>
-  </a>
-</div>
+<!-- 
+Map over the projects array and render the components based on the videoComponent property. -->
+{
+  projects.map((project) => {
+    return (
+      <div class="project grid grid- ">
+        <a href={project.href} class="project__link">
+          
+        <div class="project__video">
+          {
+            project.videoComponent === "ProjectVideoAnaren" ? <ProjectVideoAnaren /> : 
+            project.videoComponent === "ProjectVideoZenmode" ?<ProjectVideoZenmode />
+            : null
+          }
+        </div>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">{project.title}</h3>
+          <p class="project__body">{project.body}</p>
+          <Button href={project.href} text="Learn More"/>
+          <div class="project__links">
+          </div>
+        </div>
+      </div>
+    );
+  })
+}

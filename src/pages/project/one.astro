@@ -8,18 +8,19 @@ import ProjectVideoAnaren from "../../components/ProjectVideoAnaren.astro";
 ---
 
 <Layout title="Project 1">
-  <div class="video-wrapper">
-  <ProjectVideoAnaren />
-</div> 
   <HeaderSmall title={title} subtitle={subtitle} />
+  <div class="video-wrapper">
+    <ProjectVideoAnaren />
+  </div>
+
   <main>
-    <div class="mb-12">
-      
-    </div>
+    <div class="mb-12"></div>
   </main>
 </Layout>
 
 <style>
-
-
+  .video-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
 </style>
