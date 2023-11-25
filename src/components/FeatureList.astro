@@ -5,38 +5,37 @@ const heading = "Some things I can help you with";
 
 const sections = [
   "Custom Static Site",
-  "WordPress CMS",
-  "SEO",
+  "WordPress, Drupal, Jamstack CMS",
   "Analytics",
   "Content Creation",
   "Custom React Components",
+  "SEO",
 ];
 const sectionIcons = [
   "/icons/staticsites.svg",
   "/icons/wordpress.svg",
-  "/icons/seo.svg",
   "/icons/analytics.svg",
   "/icons/contentcreation.svg",
-  "/icons/react.svg"
+  "/icons/react.svg",
+  "/icons/seo.svg",
+]
+const sectionIconsDark = [
+  "/icons/staticsites-dark.svg",
+  "/icons/wordpress-dark.svg",
+  "/icons/analytics-dark.svg",
+  "/icons/contentcreation-dark.svg",
+  "/icons/react-dark.svg",
+  "/icons/seo-dark.svg",
 ]
 const sectionsText = [
   "I can build you a custom static site using Astro, Next, or Jekyll. Static sites are fast, secure, and easy to maintain.",
   "Do you want to add content like blogs, landing pages, or custom sections? I can help set up a WordPress site for you.",
-  "SEO is important for your site to be found. I can help you with SEO best practices and tools to help you rank higher.",
   "Using analytics tools like Google Analytics, I can help you track your site's performance and make improvements.",
   "I've been using Adobe products for over 10 years. I can help you create content for your site, social media, and even custom YouTube videos.",
   "Need something more custom for an app? I can help you build custom React components for your project.",
+  "SEO is important for your site to be found. I can help you with SEO best practices and tools to help you rank higher.",
 ];
 
-import lightImageseo from "/icons/seo.svg";
-import darkImageseo from "/icons/seo-dark.svg";
-
-interface Props {
-  darkImageseo: string;
-  lightImageseo: string;
-}
-
-const { darkImageseo, lightImageseo } = Astro.props;
 ---
 
 <div class="mb-12 bg-stone-100 dark:bg-slate-800">
@@ -50,17 +49,9 @@ const { darkImageseo, lightImageseo } = Astro.props;
           return (
             <div class="flex flex-col">
               <div class="mt-6">
-                <img
-                  src={lightImageseo}
-                  class="dark:hidden w-[272px] h-[572px]"
-                  alt=""
-                />
-                <img
-                  src={darkImageseo}
-                  class="hidden dark:block w-[272px] h-[572px]"
-                  alt=""
-                />
-                <img class="mb-4" width="60" height="60" src={sectionIcons[sections.indexOf(section)]} alt="" />
+               
+                <img class="mb-4 dark:hidden" width="60" height="60" src={sectionIcons[sections.indexOf(section)]} alt="" />
+                <img class="mb-4 hidden dark:block" width="60" height="60" src={sectionIconsDark[sections.indexOf(section)]} alt="" />
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                   {sections[sections.indexOf(section)]}
                 </h3>
