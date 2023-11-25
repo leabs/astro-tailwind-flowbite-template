@@ -46,6 +46,7 @@ import Drawer from "../components/Drawer.astro";
 import GalleryMasonry from "../components/GalleryMasonry.astro";
 import GalleryFeatured from "../components/GalleryFeatured.astro";
 import Kbd from "../components/Kbd.astro";
+import Video from "../components/Video.astro";
 ---
 
 <Layout title="Components">
@@ -153,6 +154,9 @@ import Kbd from "../components/Kbd.astro";
       <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
         Press <Kbd key="Shift" /> + <Kbd key="U" /> in this example.
       </p>
+
+      <Heading heading="Video" />
+      <Video youtube="https://www.youtube.com/embed/FBFbW2TNRL8?si=eckpNaRHRxQcO8i3" />
     </div>
   </main>
 </Layout>
