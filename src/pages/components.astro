@@ -47,6 +47,7 @@ import GalleryMasonry from "../components/GalleryMasonry.astro";
 import GalleryFeatured from "../components/GalleryFeatured.astro";
 import Kbd from "../components/Kbd.astro";
 import Video from "../components/Video.astro";
+import VideoAlt from "../components/VideoAlt.astro";
 ---
 
 <Layout title="Components">
@@ -160,6 +161,14 @@ import Video from "../components/Video.astro";
         Link needs to be the embedded link from youtube.
       </p>
       <Video
+        youtube="https://www.youtube.com/embed/FBFbW2TNRL8?si=eckpNaRHRxQcO8i3"
+      />
+
+      <Heading heading="Video Alt" />
+      <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
+        Link needs to be the embedded link from youtube.
+      </p>
+      <VideoAlt
         youtube="https://www.youtube.com/embed/FBFbW2TNRL8?si=eckpNaRHRxQcO8i3"
       />
     </div>
