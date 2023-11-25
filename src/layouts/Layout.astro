@@ -5,7 +5,6 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
-import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 import { slide } from 'astro:transitions';
@@ -14,7 +13,7 @@ import data from "../data/site.json";
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none">
+<html lang="en" transition:animate="none" class="dark bg-slate-800 min-h-screen">
   <head>
     <ViewTransitions fallback="swap" />
     <meta charset="UTF-8" />
@@ -27,7 +26,7 @@ import data from "../data/site.json";
   </head>
   <body>
     <div class="bg-stone-100 dark:bg-slate-800 min-h-screen ">
-      <Nav />
+      
       <div class="container" >
         <slot transition:name="body" />
         <Footer />
