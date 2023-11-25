@@ -38,6 +38,9 @@ import Tabs from "../components/Tabs.astro";
 import Rating from "../components/Rating.astro";
 import Modal from "../components/Modal.astro";
 import IndicatorCount from "../components/IndicatorCount.astro";
+
+//Added 11/25/23
+import Carousel from "../components/Carousel.astro";
 ---
 
 <Layout title="Components">
@@ -125,6 +128,9 @@ import IndicatorCount from "../components/IndicatorCount.astro";
 
       <Heading heading="Indicator Count" />
       <IndicatorCount button="Messages" count={69} href="https://google.com" />
+
+      <Heading heading="Carousel" />
+      <Carousel />
     </div>
   </main>
 </Layout>
