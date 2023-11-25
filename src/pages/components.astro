@@ -42,6 +42,8 @@ import IndicatorCount from "../components/IndicatorCount.astro";
 //Added 11/25/23
 import Carousel from "../components/Carousel.astro";
 import Banner from "../components/Banner.astro";
+import Drawer from "../components/Drawer.astro";
+import GalleryMasonry from "../components/GalleryMasonry.astro";
 ---
 
 <Layout title="Components">
@@ -88,6 +90,9 @@ import Banner from "../components/Banner.astro";
       <Heading heading="Gallery" />
       <Gallery />
 
+      <Heading heading="Gallery (Masonry)" />
+      <GalleryMasonry />
+
       <Heading heading="Jumbotron" />
       <Jumbotron />
 
@@ -133,8 +138,11 @@ import Banner from "../components/Banner.astro";
       <Heading heading="Carousel" />
       <Carousel />
 
-      <Heading heading="Banner" />
+      <Heading heading="Banner (see bottom)" />
       <Banner text="Here is some text for the banner" />
+
+      <Heading heading="Drawer" />
+      <Drawer />
     </div>
   </main>
 </Layout>
