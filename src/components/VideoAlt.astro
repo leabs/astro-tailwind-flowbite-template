@@ -1,0 +1,54 @@
+---
+interface Props {
+  youtube: string;
+}
+
+const { youtube } = Astro.props;
+---
+
+<div class="videoaltwrapper">
+  <div
+    class="menu-bar bg-gray-300 dark:bg-slate-900 h-4 w-full flex relative m-[-10px] left-[20px] pl-[6px] pt-[6px] border-gray-300 dark:border-gray-900 border-[14px]"
+  >
+    <span class="flex w-3 h-3 me-3 bg-red-500 rounded-full"></span><span
+      class="flex w-3 h-3 me-3 bg-yellow-400 rounded-full"></span><span
+      class="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
+  </div>
+  <div
+    class="videowrapper shadow border-gray-300 dark:border-gray-900 bg-gray-300 dark:bg-gray-800 border-[14px] "
+  >
+    <iframe
+      class="border border-gray-200 rounded-lg dark:border-gray-700"
+      src={youtube}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<style>
+    .menu-bar{
+        border-radius: 2.5rem 2.5rem 0 0;
+        left:10px;
+        bottom:10px;
+    }
+  .videowrapper {
+    float: none;
+    clear: both;
+    border-radius: 0 0 2.5rem 2.5rem;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+  }
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 2rem 2rem;
+    border:3px solid rgba(0,0,0,0.1);
+  }
+</style>

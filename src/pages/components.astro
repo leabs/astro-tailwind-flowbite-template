@@ -38,6 +38,16 @@ import Tabs from "../components/Tabs.astro";
 import Rating from "../components/Rating.astro";
 import Modal from "../components/Modal.astro";
 import IndicatorCount from "../components/IndicatorCount.astro";
+
+//Added 11/25/23
+import Carousel from "../components/Carousel.astro";
+import Banner from "../components/Banner.astro";
+import Drawer from "../components/Drawer.astro";
+import GalleryMasonry from "../components/GalleryMasonry.astro";
+import GalleryFeatured from "../components/GalleryFeatured.astro";
+import Kbd from "../components/Kbd.astro";
+import Video from "../components/Video.astro";
+import VideoAlt from "../components/VideoAlt.astro";
 ---
 
 <Layout title="Components">
@@ -84,6 +94,12 @@ import IndicatorCount from "../components/IndicatorCount.astro";
       <Heading heading="Gallery" />
       <Gallery />
 
+      <Heading heading="Gallery (Masonry)" />
+      <GalleryMasonry />
+
+      <Heading heading="Gallery (Featured)" />
+      <GalleryFeatured />
+
       <Heading heading="Jumbotron" />
       <Jumbotron />
 
@@ -125,6 +141,36 @@ import IndicatorCount from "../components/IndicatorCount.astro";
 
       <Heading heading="Indicator Count" />
       <IndicatorCount button="Messages" count={69} href="https://google.com" />
+
+      <Heading heading="Carousel" />
+      <Carousel />
+
+      <Heading heading="Banner (see bottom)" />
+      <Banner text="Here is some text for the banner" />
+
+      <Heading heading="Drawer" />
+      <Drawer />
+
+      <Heading heading="Kbd" />
+      <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
+        Press <Kbd key="Shift" /> + <Kbd key="U" /> in this example.
+      </p>
+
+      <Heading heading="Video" />
+      <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
+        Link needs to be the embedded link from youtube.
+      </p>
+      <Video
+        youtube="https://www.youtube.com/embed/FBFbW2TNRL8?si=eckpNaRHRxQcO8i3"
+      />
+
+      <Heading heading="Video Alt" />
+      <p class="mb-8 mt-2 text-lg text-gray-900 dark:text-gray-200">
+        Link needs to be the embedded link from youtube.
+      </p>
+      <VideoAlt
+        youtube="https://www.youtube.com/embed/8SqtRVx4yuc?si=tMAYAOBGstMZIyds"
+      />
     </div>
   </main>
 </Layout>
