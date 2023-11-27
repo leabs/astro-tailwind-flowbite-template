@@ -1,4 +1,30 @@
-<div>
-    <h3>Find me online</h3>
-   
-</div>
+---
+import data from "../data/site.json"
+---
+
+<section class="socialcta">
+  <div>
+    <h2
+      class="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+    >
+      Places You Can Find Me
+    </h2>
+    {
+        data.social.map((social) => (
+            <a
+            href={social.url}
+            class="flex items-center justify-center w-full px-8 py-4 mb-4 text-lg font-semibold text-white transition duration-150 ease-in-out bg-gray-900 rounded-lg md:mb-0 md:w-auto hover:bg-gray-800"
+            >
+            {social.title}
+            </a>
+        ))
+    }
+  </div>
+</section>
+
+<style>
+    .socialcta {
+        background-color: #21D4FD;
+        background-image: linear-gradient(90deg, rgb(37, 33, 253)  0%, #515665 100%);
+    }
+</style>

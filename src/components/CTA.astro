@@ -1,30 +1,24 @@
 ---
 // import the Image component and the image
-import { Image } from "astro:assets";
-import darkImage from "../assets/cta-dashboard-mockup-dark.svg";
-import lightImage from "../assets/cta-dashboard-mockup.svg";
-const title = "I enjoys building things and making content";
+const title = "Building in Public";
 const body =
   "I'm a Web Developer with six years of professional experience, specializing in creating visually appealing websites and developing layouts and components based on intricate designs. I've worked with a variety of clients, from startups to larger corporations, and I'm well-versed in the latest web development technologies. If my expertise aligns with your business needs, don't hesitate to reach out. I'm based in Upstate New York.";
 
 import ProjectVideoAnaren from "./ProjectVideoAnaren.astro";
 ---
 
-<section class="mb-12 bg-stone-100 dark:bg-slate-800" id="projects">
+<section class="bg-stone-100 dark:bg-slate-800" id="projects">
   <div
-    class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+    class="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6"
   >
     <ProjectVideoAnaren />
-
-    <!-- <img class="w-full dark:hidden border-solid border-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image"> -->
     <div class="mt-4 md:mt-0">
       <h2
-        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+        class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
       >
         {title}
       </h2>
-      <p class="mb-8 mt-2 text-lg text-gray-700 dark:text-gray-400">{body}</p>
+      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{body}</p>
     </div>
   </div>
 </section>

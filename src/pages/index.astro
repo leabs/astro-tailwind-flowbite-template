@@ -2,28 +2,51 @@
 import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
-import VideoAlt from "../components/VideoAlt.astro";
+import SocialCTA from "../components/SocialCTA.astro";
+import Button from "../components/Button.astro";
 import CTA from "../components/CTA.astro";
 import FeatureList from "../components/FeatureList.astro";
 import CustomGithubSection from "../components/CustomGithubSection.astro";
 import Timeline from "../components/Timeline.astro";
+import Contact from "../components/Contact.astro";
 import data from "../data/site.json";
 ---
 
 <Layout title={data.siteName}>
   <main>
-    <HeaderSmall
-      title="Steven Leabo - Frontend Web Developer"
-      subtitle="I'm engaged in freelance work, contributing to open-source projects, and creating YouTube content in my spare time. If you're looking for assistance in developing projects and realizing your ideas, I'm here to help."
-    />
-    
-    
+    <section>
+      <div class="container">
+        <HeaderSmall
+          title="Steven Leabo"
+          subtitle="As a frontend web developer, I specialize in freelance projects, contribute to open-source initiatives, and produce YouTube content in my spare time. If you need help bringing your projects to life or transforming ideas into reality, I'm available to assist."
+        />
+        <div class="text-center mt-8 ctabuttons">
+          <Button href="#projects" text="See My Work" />
+
+          <Button href="#contact" text="Contact Me" />
+        </div>
+      </div>
+    </section>
+
     <CTA />
     <CustomGithubSection />
+    <SocialCTA />
 
     <FeatureList />
     <Timeline />
+    <Contact />
   </main>
 </Layout>
 
-<script></script>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  .ctabuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>

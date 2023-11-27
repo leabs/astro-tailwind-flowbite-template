@@ -7,13 +7,17 @@ const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 
-import { slide } from 'astro:transitions';
+import { slide } from "astro:transitions";
 
 import data from "../data/site.json";
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none" class="dark bg-slate-800 min-h-screen">
+<html
+  lang="en"
+  transition:animate="none"
+  class="dark bg-slate-800 min-h-screen"
+>
   <head>
     <ViewTransitions fallback="swap" />
     <meta charset="UTF-8" />
@@ -22,19 +26,20 @@ import data from "../data/site.json";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
   </head>
   <body>
-    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen ">
-      
-      <div class="container" >
+    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen">
+      <div class="container">
         <slot transition:name="body" />
         <Footer />
       </div>
     </div>
-    <style>
+    <style is:global>
+      section {
+        margin-bottom: 100px;
+      }
       .container {
-        max-width: 1280px;
+        max-width: 1200px !important;
         margin: 0 auto;
         padding: 1rem;
       }
@@ -44,8 +49,6 @@ import data from "../data/site.json";
       #footer {
         position: fixed;
       }
-
-      
 
       @media (max-width: 767px) {
         main {
@@ -61,4 +64,3 @@ import data from "../data/site.json";
     </style>
   </body>
 </html>
-
