@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 
 import HeaderSmall from "../components/HeaderSmall.astro";
-import SocialCTA from "../components/SocialCTA.astro";
 import Button from "../components/Button.astro";
 import CTA from "../components/CTA.astro";
 import FeatureList from "../components/FeatureList.astro";
@@ -18,7 +17,7 @@ import data from "../data/site.json";
       <div class="container">
         <HeaderSmall
           title="Steven Leabo"
-          subtitle="As a frontend web developer, I specialize in freelance projects, contribute to open-source initiatives, and produce YouTube content in my spare time. If you need help bringing your projects to life or transforming ideas into reality, I'm available to assist."
+          subtitle="I'm a frontend web developer doing freelance and produce YouTube content in my spare time."
         />
         <div class="text-center mt-8 ctabuttons">
           <Button href="#projects" text="See My Work" />
@@ -30,7 +29,6 @@ import data from "../data/site.json";
 
     <CTA />
     <CustomGithubSection />
-    <SocialCTA />
 
     <FeatureList />
     <Timeline />
@@ -50,3 +48,11 @@ import data from "../data/site.json";
     gap: 1rem;
   }
 </style>
+
+<script>
+  //Spinner for page load time
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+  });
+</script>
