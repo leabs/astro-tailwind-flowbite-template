@@ -1,30 +1,55 @@
 ---
-import data from "../data/site.json";
-import Heading from "../components/Heading.astro";
-
-const heading = "Find me online!"
+const social = [
+  {
+    title: "GitHub",
+    href: "https://github.com/leabs",
+    icon: "icons/github.svg",
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/stevenleabo/",
+    icon: "icons/linkedin.svg",
+  },
+  {
+    title: "Twitter",
+    href: "https://twitter.com/Shadow_Stack",
+    icon: "icons/twitter.svg",
+  },
+  {
+    title: "CodePen",
+    href: "https://codepen.io/leabs",
+    icon: "icons/codepen.svg",
+  },
+];
 ---
 
-<div class="w-full text-center py-12 bg-white dark:bg-slate-700 rounded-t-lg">
-  <Heading heading={heading} />
+<div class="w-full text-center py-12 bg-white dark:bg-slate-800 rounded-t-lg">
   <ul
-    class="flex flex-wrap items-center justify-center text-gray-900 dark:text-white"
+    class="flex flex-wrap items-center justify-around text-gray-900 dark:text-white mb-8"
   >
     {
-      data.social.map((item) => {
-        return (
-          <li>
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mr-4 hover:underline md:mr-6 "
-            >
-              {item.title}
-            </a>
-          </li>
-        );
-      })
+      social.map((item) => (
+        <li class="">
+          <a
+            href={item.href}
+            title={item.title}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-700 dark:hover:text-gray-300"
+          >
+            <img
+              src={item.icon}
+              alt={item.title}
+              class="w-6 h-6 fill-current"
+            />
+          </a>
+        </li>
+      ))
     }
   </ul>
+  <p class="text-2xl font-semibold text-gray-900 dark:text-white pt-8">
+    Email: <a href="" class="underline hover:underline-offset-2"
+      >Stevenleabo@gmail.com</a
+    >
+  </p>
 </div>

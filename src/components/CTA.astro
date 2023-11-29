@@ -1,24 +1,28 @@
 ---
 // import the Image component and the image
-const title = "Building in Public";
+const title = "Watch Me Build";
 const body =
   "I'm a Web Developer with six years of professional experience, specializing in creating visually appealing websites and developing layouts and components based on intricate designs. I've worked with a variety of clients, from startups to larger corporations, and I'm well-versed in the latest web development technologies. If my expertise aligns with your business needs, don't hesitate to reach out. I'm based in Upstate New York.";
 
 import ProjectVideoAnaren from "./ProjectVideoAnaren.astro";
 ---
 
-<section class="bg-stone-100 dark:bg-slate-800" id="projects">
+<div class="mt-12 ">
   <div
-    class="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6"
+    class="mx-auto max-w-3xl lg:px-6"
   >
     <ProjectVideoAnaren />
-    <div class="mt-4 md:mt-0">
-      <h2
-        class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
-      >
-        {title}
-      </h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{body}</p>
-    </div>
+    
   </div>
-</section>
+</div>
+<style>
+  .info{
+    box-shadow: inset 0 0 400px rgba(57, 118, 249, 0.7);
+    border-radius:1rem;
+    background: rgba(37, 99, 235,1);
+  }
+  .info:before {
+    box-shadow: inset 0 0 400px rgba(37, 99, 235,.9);
+    filter: blur(10px);
+}
+</style>

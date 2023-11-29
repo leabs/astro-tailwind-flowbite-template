@@ -1,40 +1,20 @@
 ---
 import data from "../data/site.json";
-import Social from "./Social.astro";
+
 ---
 
 <div class="left-0 z-20 w-full shadow-lg">
-  <Social />
   <footer
     class="bg-white rounded-b-lg my-4 mt-0 dark:bg-gray-900 w-full mx-auto max-w-screen-xl"
   >
     <div
       class="p-4 md:flex md:items-center md:justify-between text-center sm:text-left"
     >
-      <span class="text-sm text-gray-700 sm:text-center dark:text-gray-400"
+      <span class="text-sm text-gray-700 sm:text-center dark:text-gray-400 sm:text-left text-right"
         ><span class="mr-2">&copy; {new Date().getFullYear()}</span>
         <a href="/" class="hover:underline">{data.siteName}</a>.
       </span>
-      <div class="text-center sm:text-left">
-        <ul
-          class="justify-center flex flex-wrap mt-3 text-sm font-medium text-gray-700 dark:text-gray-400 sm:mt-0"
-        >
-          {
-            data.pages.map((page) => {
-              return (
-                <li>
-                  <a
-                    href={page.href}
-                    class="mr-0 sm:mr-4 p-4 sm:p-0 hover:underline"
-                  >
-                    {page.title}
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </div>
+      
     </div>
   </footer>
 </div>
