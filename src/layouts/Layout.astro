@@ -21,9 +21,17 @@ import data from "../data/site.json";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>
+      //check for dark mode in local storage using the theme var
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
-    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen ">
+    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen">
       <Nav />
       <div class="container">
         <slot />
