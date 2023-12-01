@@ -1,20 +1,24 @@
 ---
-
+import { Image } from "astro:assets";
+import ZenModePoster from "../assets/zenmode-poster.png";
+import Card from "./Card.astro";
 ---
 
 <section id="projects">
-    <div>
-        <h2 class="text-white">Projects</h2>
-    </div>
+  <div>
+    <h2 class="text-white">Projects</h2>
+    <a href="/projects/one">
+      <Image src={ZenModePoster} alt="Zen Mode Poster" height="900" width="600" quality="100" transition:name="poster-image" />
+    </a>
+
+  </div>
 </section>
 
 <style>
-    #projects {
-        background-image: url("/youtubethumbs.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        min-height:900px;
-    }
-
-   
+  #projects {
+    background-image: url("/youtubethumbs.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 900px;
+  }
 </style>
