@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import MagicMirrorModePoster from "../assets/magicmirror-poster.png";
+---
+
+<Image
+  class="rounded"
+  src={MagicMirrorModePoster}
+  alt="Magic Mirror Poster"
+  height="900"
+  width="600"
+  quality="100"
+  transition:name="magicmirror-poster-image"
+/>

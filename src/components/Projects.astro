@@ -1,24 +1,46 @@
 ---
-import { Image } from "astro:assets";
-import ZenModePoster from "../assets/zenmode-poster.png";
-import Card from "./Card.astro";
+import ZenPoster from "../components/ZenPoster.astro";
+import MagicMirrorPoster from "../components/MagicMirrorPoster.astro"
 ---
 
 <section id="projects">
   <div>
-    <h2 class="text-white">Projects</h2>
-    <a href="/projects/one">
-      <Image src={ZenModePoster} alt="Zen Mode Poster" height="900" width="600" quality="100" transition:name="poster-image" />
-    </a>
+    <h2 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Featured Projects</h2>
+    <!--Three columns in a row using grid -->
 
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="hover:scale-105 project-link p-2">
+        <a href="/projects/one">
+          <ZenPoster />
+        </a>
+      </div>
+      <div class="hover:scale-105 project-link p-2">
+        <a href="/projects/two">
+          <MagicMirrorPoster />
+        </a>
+      </div>
+      <div class="hover:scale-105 project-link p-2">
+        <a href="/projects/one">
+          <ZenPoster />
+        </a>
+      </div>
+      <div class="hover:scale-105 project-link p-2">
+        <a href="/projects/one">
+          <ZenPoster />
+        </a>
+      </div>
+    </div>
   </div>
-</section>
 
-<style>
-  #projects {
-    background-image: url("/youtubethumbs.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    min-height: 900px;
-  }
-</style>
+  <style>
+    #projects {
+      background-image: url("/youtubethumbs.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-height: 900px;
+    }
+    .project-link{
+        transition: all .15s ease-in-out;
+    }
+  </style>
+</section>

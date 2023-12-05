@@ -4,17 +4,21 @@ import Layout from "../../layouts/Layout.astro";
 import HeaderSmall from "../../components/HeaderSmall.astro";
 const title = "Anaren.com";
 const subtitle = "Drupal website overhaul";
-import { Image } from "astro:assets";
-import ZenModePoster from "../../assets/zenmode-poster.png";
+import ZenPoster from "../../components/ZenPoster.astro";
 ---
 
 <Layout title="Project 1">
   <div id="poster-background" class="">
-    <Image src={ZenModePoster} alt="Zen Mode" transition:name="poster-image" />
+    <ZenPoster />
   </div>
   <div class="poster-foreground">
     <h1>Title here</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestias vitae maiores illo vel a aliquid tenetur architecto? Officia ipsam voluptates debitis quam, facere ad neque deleniti similique aspernatur repellat!</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+      molestias vitae maiores illo vel a aliquid tenetur architecto? Officia
+      ipsam voluptates debitis quam, facere ad neque deleniti similique
+      aspernatur repellat!
+    </p>
   </div>
   <a href="/">Home</a>
 
@@ -24,25 +28,5 @@ import ZenModePoster from "../../assets/zenmode-poster.png";
 </Layout>
 
 <style>
-  #poster-background{
-    background-color: #000;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    opacity:0.1;
-  }
-  .poster-foreground{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-  }
 </style>
+

@@ -5,9 +5,9 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
+import CustomNav from "../components/CustomNav.astro";
 import Footer from "../components/Footer.astro";
 
-import { slide } from "astro:transitions";
 
 import data from "../data/site.json";
 ---
@@ -15,7 +15,7 @@ import data from "../data/site.json";
 <!doctype html>
 <html
   lang="en"
-  transition:animate="none"
+
   class="dark bg-slate-800 min-h-screen"
 >
   <head>
@@ -26,17 +26,52 @@ import data from "../data/site.json";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <style is:global>
+      #poster-background {
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      
+      }
+      .poster-foreground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+      }
+      @keyframes example {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.2;
+        }
+      }
+      html{
+        margin-top:0;
+      }
+    </style>
   </head>
-  <body>
-    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen">
-      <div class="container">
-        <slot transition:name="body" />
+  <body class="pt-0 mt-0">
+    <CustomNav />
+    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen pt-0 mt-0">
+      <div class="container pt-0">
+        <slot />
         <Footer />
       </div>
     </div>
     <style is:global>
       section {
-        margin-bottom: 100px;
+        margin-bottom: 30px;
       }
       .container {
         max-width: 1200px !important;

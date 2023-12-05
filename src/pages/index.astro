@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import Social from "../components/Social.astro";
 import Button from "../components/Button.astro";
 import CTA from "../components/CTA.astro";
 import Projects from "../components/Projects.astro";
@@ -12,35 +13,11 @@ import data from "../data/site.json";
 ---
 
 <Layout title={data.siteName}>
-  <main>
-    <section id="home">
-      <div class="container">
-       
-        <div class="mt-8" >
-          <div class="text-center justify-self-center items-center p-2">
-            <h1 
-              class="max-w-full mb-4 text-4xl font-extrabold tracking-tight leading-none  sm:text-3xl md:text-6xl xl:text-7xl xs:text-2xl dark:text-white" transition:name="hero"  
-            >
-            Steven Leabo
-            </h1>
-            <p class="m-auto max-w-3xl mt-6 text-2xl leading-8 text-gray-600 dark:text-white">
-              I'm a frontend web developer doing freelance work and recording <a target="_blank" href="https://www.youtube.com/@shadowstack/videos" class="underline hover:underline-offset-4">YouTube content</a> in my spare time.
-            </p>
-          </div>
-        </div>
-        <div class="text-center mt-8 ctabuttons">
-          <Button href="#projects" text="See My Work" />
-
-          <Button href="#contact" text="Contact Me" />
-        </div>
-        <CTA />
-      </div>
-    </section>
-
-    
+  <main class="pt-0 mt-0">
     <Projects />
+
     <CustomGithubSection />
-    
+
     <FeatureList />
     <Timeline />
     <Contact />
@@ -55,18 +32,4 @@ import data from "../data/site.json";
     flex-wrap: wrap;
     gap: 1rem;
   }
-  #home{
-    background-image: url("/youtubethumbs.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height:750px;
-  }
-  #home:before{
-    background-image: url("/youtubethumbs.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height:750px;
-        opacity:.6;
-  }
 </style>
-
