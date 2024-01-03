@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+
+import thumb1 from "../assets/githubapi.png";
+import thumb2 from "../assets/githubapi.png";
+import thumb3 from "../assets/githubapi.png";
+import thumb4 from "../assets/githubapi.png";
+
+const cards = [
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb1,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb2,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb3,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb4,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb1,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb2,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb3,
+    href: "https://google.com",
+  },
+  {
+    title: "Priority support",
+    imagealt: "Priority support",
+    image: thumb4,
+    href: "https://google.com",
+  },
+  
+];
+---
+
+<div class="flex h-screen  items-center justify-center">
+  <div class="relative w-full  overflow-hidden">
+    <!-- For some reason the white vignette effect don't work in this sandbox but if you uncomment the following lines in VSCode, they should work -->
+    <div class="dark:hidden">
+    <div class="pointer-events-none absolute -top-1 z-10 h-20 w-full bg-gradient-to-b from-stone-100 to-transparent" />
+      <div class="pointer-events-none absolute -bottom-1 z-10 h-20 w-full bg-gradient-to-t from-stone-100 to-transparent" />
+      <div class="pointer-events-none absolute -left-1 z-10 h-full w-20 bg-gradient-to-r from-stone-100 to-transparent" />
+      <div class="pointer-events-none absolute -right-1 z-10 h-full w-20 bg-gradient-to-l from-stone-100 to-transparent" />
+    </div>
+    <div class="hidden dark:block">
+        <div class="pointer-events-none absolute -top-1 z-10 h-20 w-full bg-gradient-to-b from-slate-800 to-transparent" />
+          <div class="pointer-events-none absolute -bottom-1 z-10 h-20 w-full bg-gradient-to-t from-slate-800 to-transparent" />
+          <div class="pointer-events-none absolute -left-1 z-10 h-full w-20 bg-gradient-to-r from-slate-800 to-transparent" />
+          <div class="pointer-events-none absolute -right-1 z-10 h-full w-20 bg-gradient-to-l from-slate-800 to-transparent" />
+        </div>
+
+    <div
+      class="mx-auto grid h-[450px] w-[300px] animate-skew-scroll grid-cols-1 gap-5 sm:w-[600px] sm:grid-cols-2"
+    >
+      <!-- These are all the same components - if you're using React, you can use a map to iterate through all of them -->
+      {
+        cards.map((card) => (
+          <a
+            href={card.href}
+            class="cursor-pointer items-center dark:bg-gray-800 space-x-2 rounded-md border border-gray-100 p-5 shadow-md transition-all hover:-translate-y-1 hover:translate-x-1 hover:scale-[1.025] hover:shadow-xl"
+          >
+            <div class="flex-shrink-0">
+              <Image
+                src={card.image}
+                alt={card.imagealt}
+                class=""
+              />
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-gray-600 font-semibold dark:text-white underline">{card.title}</h3>
+            </div>
+          </a>
+        ))
+      }
+
+      
+    </div>
+  </div>
+</div>
