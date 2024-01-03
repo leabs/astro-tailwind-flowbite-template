@@ -2,45 +2,42 @@
 import Heading from "./Heading.astro";
 
 const heading = "What I've been up to";
-const dates = ["June 2017", "November 2017", "April 2020"];
+const dates = ["June 2017", "November 2017", "April 2020", "January 2023"];
 const info = [
   "Web Development and Design Assistant (Anaren Inc.)",
   "Frontend Web Developer (Atmosphere IoT Corp.)",
   "Freelance Web Developer (Shadow Stack LLC)",
+  "Web Development Content Creation",
 ];
 const details = [
   "I assisted in relaunching the corporate website for the space and defense engineering company. This includes landing pages promoting business markets. The site features pages on business values and career development. The corporate site hosts 700+ products that incorporate documentation, attributes, and more for each product in a data table.",
   "Built and maintained a completely custom software documentation site with Jekyll. Built and maintained a completely custom company website with Wordpress. Built front-end widgets for our IoT software platform with Handlebars and custom css. Maintained social media presence. Marketing tasks using Zoho Campaigns. Custom email templates sent with Zoho and Sendgrid. Project and getting started videos using Adobe Premiere. Analytic and metric tracking using: Klipfolio, Google Analytics, Google Tag Manager, Android Play console, Apple App Store Connect, and a custom Node app to provide usage metrics from our software. Participated in sprint reviews and planning with both Jira and Asana. ",
   "Freelance Web Developer for static and WordPress sites, web applications with React, sales oriented tasks, consulting on the latest and best tools in the industry, and much more.",
+  "I started my journey on YouTube to help others learn web development and to better my own skills with content creation. This is in efforts to someday become a full-time content creator or to start a developer relations role."
 ];
 ---
 
-<section>
-  <h2
-    class="max-w-3xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
-  >
-    {heading}
-  </h2>
-  <div class="mb-12 px-8">
-    <ol class="relative border-l border-gray-200 dark:border-gray-700">
-      {
-        dates.map((date) => {
-          return (
-            <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-primary rounded-full mt-1.5 -left-1.5 border border-white " />
-              <time class="mb-1 text-sm font-normal leading-none text-primary dark:text-white">
-                {date}
-              </time>
-              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
-                {info[dates.indexOf(date)]}
-              </h3>
-              <p class="my-6 text-lg leading-8 text-gray-600 dark:text-white">
-                {details[dates.indexOf(date)]}
-              </p>
-            </li>
-          );
-        })
-      }
-    </ol>
-  </div>
-</section>
+<Heading heading={heading} />
+<div class="mb-12 px-8">
+  <ol class="relative border-l border-gray-200 dark:border-gray-700">
+    {
+      dates.map((date) => {
+        return (
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-primary rounded-full mt-1.5 -left-1.5 border border-white " />
+            <time class="mb-1 text-sm font-normal leading-none text-primary dark:text-white">
+              {date}
+            </time>
+            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+              {info[dates.indexOf(date)]}
+            </h3>
+            <p class="mb-8 mt-2 text-lg text-gray-700 dark:text-gray-400">
+              {details[dates.indexOf(date)]}
+            </p>
+          </li>
+        );
+      })
+    }
+  </ol>
+</div>
+

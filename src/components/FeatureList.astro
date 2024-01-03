@@ -30,58 +30,49 @@ const sectionIconsDark = [
 const sectionsText = [
   "I can build you a custom static site using Astro, Next, or Jekyll. Static sites are fast, secure, and easy to maintain.",
   "Do you want to add content like blogs, landing pages, or custom sections? I can help set up a WordPress site for you.",
-  "Using analytics tools like Google Analytics, I can help you track your site's performance and make improvements.",
-  "I've been using Adobe products for over 10 years and can help you create content for your site, social media, and YouTube.",
+  "SEO is important for your site to be found. I can help you with SEO best practices and tools to help you rank higher.",
+  "Using analytics tools like Google Analytics or umami, I can help you track your site's performance and make improvements.",
+  "I've been using Adobe products for over 10 years. I can help you create content for your site, social media, and even custom YouTube videos.",
   "Need something more custom for an app? I can help you build custom React components for your project.",
   "SEO is important for your site to be found. I can help you with SEO best practices and tools to help you rank higher.",
 ];
+
+const icons = [
+  "/static.svg",
+  "/cms.svg",
+  "/seo.svg",
+  "/analytics.svg",
+  "/content.svg",
+  "/components.svg",
+]
 ---
 
-<section>
-  <div class="bg-stone-100 dark:bg-slate-800">
-    <div class="px-4 mx-auto max-w-screen-xl lg:px-6">
-      <h2
-        class="max-w-3xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
-      >
-        {heading}
-      </h2>
-      <div
-        class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
-      >
-        {
-          sections.map((section) => {
-            return (
-              <div class="flex flex-col">
-                <div class="mt-6">
-                  <img
-                    class="mb-4 dark:hidden"
-                    width="60"
-                    height="60"
-                    src={sectionIcons[sections.indexOf(section)]}
-                    alt=""
-                  />
-                  <img
-                    class="mb-4 hidden dark:block"
-                    width="60"
-                    height="60"
-                    src={sectionIconsDark[sections.indexOf(section)]}
-                    alt=""
-                  />
-                  <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
-                    {sections[sections.indexOf(section)]}
-                  </h3>
-                  <p class="my-6 text-lg leading-8 text-gray-600 dark:text-white">
-                    {sectionsText[sections.indexOf(section)]}
-                  </p>
-                </div>
+<div class="mb-12 bg-stone-100 dark:bg-slate-800 container">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <Heading heading={heading} />
+    <div
+      class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+    >
+      {
+        sections.map((section) => {
+          return (
+            <div class="flex flex-col">
+              <div class="mt-6">
+                <img src={icons[sections.indexOf(section)]} alt="" class="mb-4" />
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                  {sections[sections.indexOf(section)]}
+                </h3>
+                <p class="mb-8 mt-2 text-lg text-gray-700 dark:text-gray-400">
+                  {sectionsText[sections.indexOf(section)]}
+                </p>
               </div>
-            );
-          })
-        }
-      </div>
+            </div>
+          );
+        })
+      }
     </div>
   </div>
-</section>
+</div>
 
 <style>
   svg path {

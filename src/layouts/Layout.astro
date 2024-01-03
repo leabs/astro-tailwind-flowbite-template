@@ -5,7 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
-import CustomNav from "../components/CustomNav.astro";
+import Nav from "../components/CustomNav.astro";
 import Footer from "../components/Footer.astro";
 
 
@@ -61,20 +61,19 @@ import data from "../data/site.json";
       }
     </style>
   </head>
-  <body class="pt-0 mt-0">
-    <CustomNav />
-    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen pt-0 mt-0">
-      <div class="container pt-0">
+  <body class="dark">
+    <div class="bg-stone-100 dark:bg-slate-800 min-h-screen">
+      <Nav />
+      <div class="">
         <slot />
-        <Footer />
+        <div class="container">
+          <Footer />
+        </div>
       </div>
     </div>
     <style is:global>
-      section {
-        margin-bottom: 30px;
-      }
       .container {
-        max-width: 1200px !important;
+        max-width: 1024px;
         margin: 0 auto;
         padding: 1rem;
       }

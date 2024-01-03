@@ -1,28 +1,49 @@
 ---
 // import the Image component and the image
-const title = "Watch Me Build";
-const body =
-  "I'm a Web Developer with six years of professional experience, specializing in creating visually appealing websites and developing layouts and components based on intricate designs. I've worked with a variety of clients, from startups to larger corporations, and I'm well-versed in the latest web development technologies. If my expertise aligns with your business needs, don't hesitate to reach out. I'm based in Upstate New York.";
 
-import ProjectVideoAnaren from "./ProjectVideoAnaren.astro";
+import Button from "../components/Button.astro";
+const title = "I'm a web developer that enjoys building things";
+const body =
+  "I have over 6 years professional experience and have collaborated with a diverse range of clients, from start-ups to larger companies. My areas of expertise include building sites with visually appealing styles, constructing layouts and components based on designs, and utilizing the latest web technologies. If you believe I can help your business, feel free to contact me. I am based in Upstate NY.";
 ---
 
-<div class="mt-12 ">
+<section class="my-12 bg-stone-100 dark:bg-slate-800">
+    <h2
+        class="text-center mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+      >
+        {title}
+      </h2>
   <div
-    class="mx-auto max-w-3xl lg:px-6"
+    class="gap-8 items-center pb-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:pb-16 lg:px-6"
   >
-    <ProjectVideoAnaren />
-    
+  
+    <div>
+      
+      <a
+        href="https://github.com/leabs" target="_blank"
+        class="w-full block mb-4 text-white bg-primary focus:outline-none cursor-pointer focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 text-center" style="background: #010409"
+        >GitHub</a
+      >
+      <a
+        href="https://www.youtube.com/@shadowstack/featured" target="_blank"
+        class="w-full block mb-4 text-white bg-primary focus:outline-none cursor-pointer focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 text-center" style="background: #EA3223"
+        >YouTube</a
+      >
+      <a
+        href="https://www.linkedin.com/in/stevenleabo/" target="_blank"
+        class="w-full block mb-4 text-white bg-primary focus:outline-none cursor-pointer focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 text-center" style="background:#0477B5"
+        >LinkedIn</a
+      >
+      <a
+        href="https://www.upwork.com/freelancers/~011442e16729fe0928" target="_blank"
+        class="w-full block mb-3 text-white bg-primary focus:outline-none cursor-pointer focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 text-center" style="background: #4B4B4B"
+        >Hire Me on <span style="color:#6FDA44">Up</span>work</a
+      >
+    </div>
+
+    <div class="mt-4 md:mt-0">
+      
+      <p class="mb-8 mt-[26px] mt-2 text-lg text-gray-700 dark:text-gray-400">{body}</p>
+    </div>
   </div>
-</div>
-<style>
-  .info{
-    box-shadow: inset 0 0 400px rgba(57, 118, 249, 0.7);
-    border-radius:1rem;
-    background: rgba(37, 99, 235,1);
-  }
-  .info:before {
-    box-shadow: inset 0 0 400px rgba(37, 99, 235,.9);
-    filter: blur(10px);
-}
-</style>
+</section>
