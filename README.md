@@ -62,6 +62,10 @@ Replace the image in `public/favicon.svg` with your own favicon.
 
 Colors for primary, secondary, and accent are set in the `tailwind.config.cjs` file. You can change them there to whatever you'd like. A Tailwind palette or even a hex or RGB value will work.
 
+## Deployment
+
+The easiest way to deploy a site like this is by using a service like Vercel, Cloudflare, or Netlify. Simply set up a free account on one of them, authorize your GitHub account, and grant access to all or selected repositories. From there, it should be as simple as setting up a new project in the dashboard; these services should handle the rest.
+
 ## Contributing
 
 If you'd like to contribute to this project, please feel free to send me a pull request. I'm always looking for ways to improve this template. If it's for a bug fix, please create an issue first so we can discuss it, the same with a feature add. This will give me more understanding when reviewing the PR. I want to keep this project neat and fast, so please make sure to follow the guidelines below.
