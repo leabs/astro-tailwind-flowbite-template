@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+@config "../../tailwind.config.cjs";
+@custom-variant dark (&:where(.dark, .dark *));
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";

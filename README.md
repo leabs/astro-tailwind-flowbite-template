@@ -13,6 +13,7 @@ This is a work in progress, so please feel free to send me a pull request for an
 ## Getting Started
 
 - Clone or fork this repo.
+- Use Node 22.12+ (`nvm use` will read the included `.nvmrc` file).
 - Run `npm install` to install all the dependencies.
 - Run `npm run dev` to start the dev server.
 - You can then view the site at [http://localhost:4321/](http://localhost:4321/).
@@ -20,6 +21,22 @@ This is a work in progress, so please feel free to send me a pull request for an
 ## Changing Site Contents
 
 Most of the site data lives in `src/data/site.json`. You can change the site title, description, social media links, and more there. Make sure to use a JSON linter in case you make any mistakes!
+
+## Theme Mode
+
+The theme behavior is also configured in `src/data/site.json`:
+
+```json
+"theme": {
+  "mode": "toggle"
+}
+```
+
+Use one of these values for `theme.mode`:
+
+- `toggle`: default behavior. The site supports both light and dark mode and shows the toggle button in the nav.
+- `light`: forces the site into light mode only and removes the toggle button.
+- `dark`: forces the site into dark mode only and removes the toggle button.
 
 ## Adding Pages
 
@@ -60,11 +77,13 @@ Replace the image in `public/favicon.svg` with your own favicon.
 
 ## Site Colors
 
-Colors for primary, secondary, and accent are set in the `tailwind.config.cjs` file. You can change them there to whatever you'd like. A Tailwind palette or even a hex or RGB value will work.
+Tailwind and Flowbite are wired up in `src/styles/global.css`, and the custom theme colors and animations live in `tailwind.config.cjs`. You can change the primary and secondary colors there to whatever you'd like.
 
 ## Deployment
 
 The easiest way to deploy a site like this is by using a service like Vercel, Cloudflare, or Netlify. Simply set up a free account on one of them, authorize your GitHub account, and grant access to all or selected repositories. From there, it should be as simple as setting up a new project in the dashboard; these services should handle the rest.
+
+For Vercel specifically, this template pins the build runtime to Node `22.x` in `package.json`, which matches Astro 6's Node 22 requirement.
 
 ## Contributing
 
