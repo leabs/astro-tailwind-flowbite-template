@@ -22,6 +22,22 @@ This is a work in progress, so please feel free to send me a pull request for an
 
 Most of the site data lives in `src/data/site.json`. You can change the site title, description, social media links, and more there. Make sure to use a JSON linter in case you make any mistakes!
 
+## Theme Mode
+
+The theme behavior is also configured in `src/data/site.json`:
+
+```json
+"theme": {
+  "mode": "toggle"
+}
+```
+
+Use one of these values for `theme.mode`:
+
+- `toggle`: default behavior. The site supports both light and dark mode and shows the toggle button in the nav.
+- `light`: forces the site into light mode only and removes the toggle button.
+- `dark`: forces the site into dark mode only and removes the toggle button.
+
 ## Adding Pages
 
 Add pages in the `src/pages` directory. Create a new file named `pagename.astro` and import the Layout component and some variables into your new page like so:

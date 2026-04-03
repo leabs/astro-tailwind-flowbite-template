@@ -10,10 +10,15 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 import data from "../data/site.json";
+
+const themeMode =
+  data.theme?.mode === "light" || data.theme?.mode === "dark"
+    ? data.theme.mode
+    : "toggle";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme-mode={themeMode}>
   <head>
     <ClientRouter />
     <meta charset="UTF-8" />
@@ -23,8 +28,13 @@ import data from "../data/site.json";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline>
-      //check for dark mode in local storage using the theme var
-      if (localStorage.getItem("theme") === "dark") {
+      const themeMode = document.documentElement.dataset.themeMode || "toggle";
+
+      if (themeMode === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (themeMode === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
